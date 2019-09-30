@@ -1,0 +1,5 @@
+2019-09-22 22:26:56,789 - werkzeug - WARNING -  * Debugger is active!
+2019-09-22 22:28:24,011 - werkzeug - WARNING -  * Debugger is active!
+2019-09-22 22:28:52,668 - chirptext.dekomecab - WARNING - mecab-python3 could not be loaded. mecab binary package will be used (mecab)
+2019-09-22 22:28:52,681 - werkzeug - WARNING -  * Debugger is active!
+2019-09-22 22:29:23,274 - werkzeug - WARNING -  * Debugger is active!

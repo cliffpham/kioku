@@ -1,0 +1,689 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AppConfig	jamdict/config.py	/^from chirptext import AppConfig$/;"	i
+Audit	jamdict/data/setup_jmdict.sql	/^CREATE TABLE Audit ($/;"	t
+Audit	jamdict/jmdict.py	/^class Audit(object):$/;"	c
+Audit	jamdict/jmdict_sqlite.py	/^from .jmdict import Meta, JMDEntry, EntryInfo, Link, BibInfo, Audit, KanjiForm, KanaForm, Sense, SenseGloss, LSource$/;"	i
+Audit.Audit_idseq	jamdict/data/setup_jmdict.sql	/^CREATE INDEX Audit_idseq ON Audit(idseq);$/;"	i
+Audit.idseq	jamdict/data/setup_jmdict.sql	/^       idseq INTEGER$/;"	F
+Audit.upd_date	jamdict/data/setup_jmdict.sql	/^       ,upd_date TEXT$/;"	F
+Audit.upd_detl	jamdict/data/setup_jmdict.sql	/^       ,upd_detl TEXT$/;"	F
+Bib	jamdict/data/setup_jmdict.sql	/^CREATE TABLE Bib ($/;"	t
+Bib.ID	jamdict/data/setup_jmdict.sql	/^       ID INTEGER PRIMARY KEY$/;"	F
+Bib.idseq	jamdict/data/setup_jmdict.sql	/^       ,idseq INTEGER$/;"	F
+Bib.tag	jamdict/data/setup_jmdict.sql	/^       ,tag TEXT$/;"	F
+Bib.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+BibInfo	jamdict/jmdict.py	/^class BibInfo(object):$/;"	c
+BibInfo	jamdict/jmdict_sqlite.py	/^from .jmdict import Meta, JMDEntry, EntryInfo, Link, BibInfo, Audit, KanjiForm, KanaForm, Sense, SenseGloss, LSource$/;"	i
+CLIApp	jamdict/tools.py	/^from chirptext.cli import CLIApp, setup_logging$/;"	i
+CONFIG_TEMPLATE	jamdict/config.py	/^CONFIG_TEMPLATE = os.path.join(MY_DIR, 'data', 'config_template.json')$/;"	v
+CORS	app.py	/^from flask_cors import CORS$/;"	i
+Character	jamdict/kanjidic2.py	/^class Character(object):$/;"	c
+Character	jamdict/kanjidic2_sqlite.py	/^from .kanjidic2 import Character, CodePoint, Radical, Variant, DicRef, QueryCode, RMGroup, Reading, Meaning$/;"	i
+CodePoint	jamdict/kanjidic2.py	/^class CodePoint(object):$/;"	c
+CodePoint	jamdict/kanjidic2_sqlite.py	/^from .kanjidic2 import Character, CodePoint, Radical, Variant, DicRef, QueryCode, RMGroup, Reading, Meaning$/;"	i
+DEBUG	app.py	/^DEBUG = True$/;"	v
+DicRef	jamdict/kanjidic2.py	/^class DicRef(object):$/;"	c
+DicRef	jamdict/kanjidic2_sqlite.py	/^from .kanjidic2 import Character, CodePoint, Radical, Variant, DicRef, QueryCode, RMGroup, Reading, Meaning$/;"	i
+Entry	jamdict/data/setup_jmdict.sql	/^CREATE TABLE Entry ($/;"	t
+Entry.idseq	jamdict/data/setup_jmdict.sql	/^       idseq INTEGER NOT NULL UNIQUE$/;"	F
+EntryInfo	jamdict/jmdict.py	/^class EntryInfo(object):$/;"	c
+EntryInfo	jamdict/jmdict_sqlite.py	/^from .jmdict import Meta, JMDEntry, EntryInfo, Link, BibInfo, Audit, KanjiForm, KanaForm, Sense, SenseGloss, LSource$/;"	i
+Etym	jamdict/data/setup_jmdict.sql	/^CREATE TABLE Etym ($/;"	t
+Etym.Etym_idseq	jamdict/data/setup_jmdict.sql	/^CREATE INDEX Etym_idseq ON Etym(idseq);$/;"	i
+Etym.idseq	jamdict/data/setup_jmdict.sql	/^       idseq INTEGER$/;"	F
+Etym.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+Flask	app.py	/^from flask import Flask, jsonify, request$/;"	i
+Flask	jamdol-flask.py	/^from flask import Flask, Response$/;"	i
+HIRAGANA	jamdict/util.py	/^from chirptext.deko import HIRAGANA, KATAKANA$/;"	i
+JAMDICT_URL	jamdict/jmdict_sqlite.py	/^from . import __version__ as JAMDICT_VERSION, __url__ as JAMDICT_URL$/;"	i
+JAMDICT_URL	jamdict/kanjidic2_sqlite.py	/^from . import __version__ as JAMDICT_VERSION, __url__ as JAMDICT_URL$/;"	i
+JAMDICT_VERSION	jamdict/jmdict_sqlite.py	/^from . import __version__ as JAMDICT_VERSION, __url__ as JAMDICT_URL$/;"	i
+JAMDICT_VERSION	jamdict/kanjidic2_sqlite.py	/^from . import __version__ as JAMDICT_VERSION, __url__ as JAMDICT_URL$/;"	i
+JMDEntry	jamdict/jmdict.py	/^class JMDEntry(object):$/;"	c
+JMDEntry	jamdict/jmdict_sqlite.py	/^from .jmdict import Meta, JMDEntry, EntryInfo, Link, BibInfo, Audit, KanjiForm, KanaForm, Sense, SenseGloss, LSource$/;"	i
+JMDICT_SETUP_FILE	jamdict/jmdict_sqlite.py	/^JMDICT_SETUP_FILE = os.path.join(SCRIPT_FOLDER, 'setup_jmdict.sql')$/;"	v
+JMDICT_URL	jamdict/jmdict_sqlite.py	/^JMDICT_URL = 'http:\/\/www.csse.monash.edu.au\/~jwb\/edict.html'$/;"	v
+JMDICT_VERSION	jamdict/jmdict_sqlite.py	/^JMDICT_VERSION = '1.08'$/;"	v
+JMD_DB	jamdict/tools.py	/^JMD_DB = config.get_file('JAMDICT_DB')$/;"	v
+JMD_XML	jamdict/tools.py	/^JMD_XML = config.get_file('JMDICT_XML')$/;"	v
+JMDictSQLite	jamdict/__init__.py	/^from .jmdict_sqlite import JMDictSQLite$/;"	i
+JMDictSQLite	jamdict/jmdict_sqlite.py	/^class JMDictSQLite(JMDictSchema):$/;"	c
+JMDictSQLite	jamdict/util.py	/^from .jmdict_sqlite import JMDictSQLite$/;"	i
+JMDictSQLite	test/test_jmdict_sqlite.py	/^from jamdict import JMDictSQLite$/;"	i
+JMDictSchema	jamdict/jmdict_sqlite.py	/^class JMDictSchema(Schema):$/;"	c
+JMDictXML	jamdict/__init__.py	/^from .util import Jamdict, JMDictXML, KanjiDic2XML$/;"	i
+JMDictXML	jamdict/util.py	/^class JMDictXML(object):$/;"	c
+JMDictXML	test/test_jamdict.py	/^from jamdict import Jamdict, JMDictXML$/;"	i
+JMDictXML	test/test_jmdict_sqlite.py	/^from jamdict import JMDictXML$/;"	i
+JMDictXMLParser	jamdict/jmdict.py	/^class JMDictXMLParser(object):$/;"	c
+JMDictXMLParser	jamdict/util.py	/^from .jmdict import JMDictXMLParser$/;"	i
+JMDictXMLParser	test/test_jamdict.py	/^from jamdict.jmdict import JMDictXMLParser$/;"	i
+Jamdict	jamdict/__init__.py	/^from .util import Jamdict, JMDictXML, KanjiDic2XML$/;"	i
+Jamdict	jamdict/tools.py	/^from jamdict import Jamdict$/;"	i
+Jamdict	jamdict/util.py	/^class Jamdict(object):$/;"	c
+Jamdict	jamdict_demo.py	/^from jamdict import Jamdict$/;"	i
+Jamdict	jamdol-flask.py	/^from jamdict import Jamdict$/;"	i
+Jamdict	kotoba.py	/^from jamdict import Jamdict$/;"	i
+Jamdict	test/test_jamdict.py	/^from jamdict import Jamdict, JMDictXML$/;"	i
+Jamdict	test/test_jmdict_sqlite.py	/^from jamdict import Jamdict$/;"	i
+JamdictSQLite	jamdict/util.py	/^class JamdictSQLite(KanjiDic2SQLite, JMDictSQLite):$/;"	c
+KANJIDIC2_SETUP_FILE	jamdict/kanjidic2_sqlite.py	/^KANJIDIC2_SETUP_FILE = os.path.join(SCRIPT_FOLDER, 'setup_kanjidic2.sql')$/;"	v
+KATAKANA	jamdict/util.py	/^from chirptext.deko import HIRAGANA, KATAKANA$/;"	i
+KD2_XML	jamdict/tools.py	/^KD2_XML = config.get_file('KD2_XML')$/;"	v
+KEY_CREATED_DATE	jamdict/kanjidic2_sqlite.py	/^    KEY_CREATED_DATE = 'kanjidic2.date_of_creation'$/;"	v	class:KanjiDic2Schema
+KEY_DB_VER	jamdict/kanjidic2_sqlite.py	/^    KEY_DB_VER = 'kanjidic2.database_version'$/;"	v	class:KanjiDic2Schema
+KEY_FILE_VER	jamdict/kanjidic2_sqlite.py	/^    KEY_FILE_VER = 'kanjidic2.file_version'$/;"	v	class:KanjiDic2Schema
+KEY_JMD_URL	jamdict/jmdict_sqlite.py	/^    KEY_JMD_URL = "jmdict.url"$/;"	v	class:JMDictSchema
+KEY_JMD_VER	jamdict/jmdict_sqlite.py	/^    KEY_JMD_VER = "jmdict.version"$/;"	v	class:JMDictSchema
+KJI	jamdict/data/setup_jmdict.sql	/^CREATE TABLE KJI ($/;"	t
+KJI.KJI_kid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX KJI_kid ON KJI(kid);$/;"	i
+KJI.kid	jamdict/data/setup_jmdict.sql	/^       kid INTEGER$/;"	F
+KJI.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+KJP	jamdict/data/setup_jmdict.sql	/^CREATE TABLE KJP ($/;"	t
+KJP.KJP_kid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX KJP_kid ON KJP(kid);$/;"	i
+KJP.kid	jamdict/data/setup_jmdict.sql	/^       kid INTEGER$/;"	F
+KJP.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+KNI	jamdict/data/setup_jmdict.sql	/^CREATE TABLE KNI ($/;"	t
+KNI.KNI_kid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX KNI_kid ON KNI(kid);$/;"	i
+KNI.KNI_text	jamdict/data/setup_jmdict.sql	/^CREATE INDEX KNI_text ON KNI(text);$/;"	i
+KNI.kid	jamdict/data/setup_jmdict.sql	/^       kid INTEGER$/;"	F
+KNI.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+KNP	jamdict/data/setup_jmdict.sql	/^CREATE TABLE KNP ($/;"	t
+KNP.KNP_kid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX KNP_kid ON KNP(kid);$/;"	i
+KNP.KNP_text	jamdict/data/setup_jmdict.sql	/^CREATE INDEX KNP_text ON KNP(text);$/;"	i
+KNP.kid	jamdict/data/setup_jmdict.sql	/^       kid INTEGER$/;"	F
+KNP.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+KNR	jamdict/data/setup_jmdict.sql	/^CREATE TABLE KNR ($/;"	t
+KNR.KNR_kid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX KNR_kid ON KNR(kid);$/;"	i
+KNR.KNR_text	jamdict/data/setup_jmdict.sql	/^CREATE INDEX KNR_text ON KNR(text);$/;"	i
+KNR.kid	jamdict/data/setup_jmdict.sql	/^       kid INTEGER$/;"	F
+KNR.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+Kana	jamdict/data/setup_jmdict.sql	/^CREATE TABLE Kana ($/;"	t
+Kana.ID	jamdict/data/setup_jmdict.sql	/^       ID INTEGER PRIMARY KEY$/;"	F
+Kana.Kana_idseq	jamdict/data/setup_jmdict.sql	/^CREATE INDEX Kana_idseq ON Kana(idseq);$/;"	i
+Kana.Kana_text	jamdict/data/setup_jmdict.sql	/^CREATE INDEX Kana_text ON Kana(text);$/;"	i
+Kana.idseq	jamdict/data/setup_jmdict.sql	/^       ,idseq INTEGER$/;"	F
+Kana.nokanji	jamdict/data/setup_jmdict.sql	/^       ,nokanji BOOLEAN$/;"	F
+Kana.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+KanaForm	jamdict/jmdict.py	/^class KanaForm(object):$/;"	c
+KanaForm	jamdict/jmdict_sqlite.py	/^from .jmdict import Meta, JMDEntry, EntryInfo, Link, BibInfo, Audit, KanjiForm, KanaForm, Sense, SenseGloss, LSource$/;"	i
+Kanji	jamdict/data/setup_jmdict.sql	/^CREATE TABLE Kanji ($/;"	t
+Kanji.ID	jamdict/data/setup_jmdict.sql	/^       ID INTEGER PRIMARY KEY$/;"	F
+Kanji.Kanji_idseq	jamdict/data/setup_jmdict.sql	/^CREATE INDEX Kanji_idseq ON Kanji(idseq);$/;"	i
+Kanji.Kanji_text	jamdict/data/setup_jmdict.sql	/^CREATE INDEX Kanji_text ON Kanji(text);$/;"	i
+Kanji.idseq	jamdict/data/setup_jmdict.sql	/^       ,idseq INTEGER$/;"	F
+Kanji.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+KanjiDic2	jamdict/kanjidic2.py	/^class KanjiDic2(object):$/;"	c
+KanjiDic2SQLite	jamdict/__init__.py	/^from .kanjidic2_sqlite import KanjiDic2SQLite$/;"	i
+KanjiDic2SQLite	jamdict/kanjidic2_sqlite.py	/^class KanjiDic2SQLite(KanjiDic2Schema):$/;"	c
+KanjiDic2SQLite	jamdict/util.py	/^from .kanjidic2_sqlite import KanjiDic2SQLite$/;"	i
+KanjiDic2SQLite	test/test_kanjidic2_sqlite.py	/^from jamdict import KanjiDic2SQLite$/;"	i
+KanjiDic2Schema	jamdict/kanjidic2_sqlite.py	/^class KanjiDic2Schema(Schema):$/;"	c
+KanjiDic2XML	jamdict/__init__.py	/^from .util import Jamdict, JMDictXML, KanjiDic2XML$/;"	i
+KanjiDic2XML	jamdict/util.py	/^class KanjiDic2XML(object):$/;"	c
+KanjiDic2XML	test/test_kanjidic2_sqlite.py	/^from jamdict import KanjiDic2XML$/;"	i
+KanjiForm	jamdict/jmdict.py	/^class KanjiForm(object):$/;"	c
+KanjiForm	jamdict/jmdict_sqlite.py	/^from .jmdict import Meta, JMDEntry, EntryInfo, Link, BibInfo, Audit, KanjiForm, KanaForm, Sense, SenseGloss, LSource$/;"	i
+Kanjidic2XMLParser	jamdict/kanjidic2.py	/^class Kanjidic2XMLParser(object):$/;"	c
+Kanjidic2XMLParser	jamdict/util.py	/^from .kanjidic2 import Kanjidic2XMLParser$/;"	i
+Kanjidic2XMLParser	test/test_jamdict.py	/^from jamdict.kanjidic2 import Kanjidic2XMLParser$/;"	i
+Kotoba	kotoba.py	/^class Kotoba():$/;"	c
+LSource	jamdict/jmdict.py	/^class LSource:$/;"	c
+LSource	jamdict/jmdict_sqlite.py	/^from .jmdict import Meta, JMDEntry, EntryInfo, Link, BibInfo, Audit, KanjiForm, KanaForm, Sense, SenseGloss, LSource$/;"	i
+Link	jamdict/data/setup_jmdict.sql	/^CREATE TABLE Link ($/;"	t
+Link	jamdict/jmdict.py	/^class Link(object):$/;"	c
+Link	jamdict/jmdict_sqlite.py	/^from .jmdict import Meta, JMDEntry, EntryInfo, Link, BibInfo, Audit, KanjiForm, KanaForm, Sense, SenseGloss, LSource$/;"	i
+Link.Bib_idseq	jamdict/data/setup_jmdict.sql	/^CREATE INDEX Bib_idseq ON Link(idseq);$/;"	i
+Link.ID	jamdict/data/setup_jmdict.sql	/^       ID INTEGER PRIMARY KEY$/;"	F
+Link.Link_idseq	jamdict/data/setup_jmdict.sql	/^CREATE INDEX Link_idseq ON Link(idseq);$/;"	i
+Link.Link_tag	jamdict/data/setup_jmdict.sql	/^CREATE INDEX Link_tag ON Link(tag);$/;"	i
+Link.desc	jamdict/data/setup_jmdict.sql	/^       ,desc TEXT$/;"	F
+Link.idseq	jamdict/data/setup_jmdict.sql	/^       ,idseq INTEGER$/;"	F
+Link.tag	jamdict/data/setup_jmdict.sql	/^       ,tag TEXT$/;"	F
+Link.uri	jamdict/data/setup_jmdict.sql	/^       ,uri TEXT$/;"	F
+LookupResult	jamdict/util.py	/^class LookupResult(object):$/;"	c
+MINI_JMD	test/test_jamdict.py	/^MINI_JMD = os.path.join(TEST_DATA, 'JMdict_mini.xml')$/;"	v
+MINI_JMD	test/test_jmdict_sqlite.py	/^MINI_JMD = os.path.join(TEST_DATA, 'JMdict_mini.xml')$/;"	v
+MINI_KD2	test/test_jamdict.py	/^MINI_KD2 = os.path.join(TEST_DATA, 'kanjidic2_mini.xml')$/;"	v
+MINI_KD2	test/test_kanjidic2_sqlite.py	/^MINI_KD2 = os.path.join(TEST_DATA, 'kanjidic2_mini.xml')$/;"	v
+MY_DIR	jamdict/config.py	/^MY_DIR = os.path.dirname(__file__)$/;"	v
+MY_DIR	test/test_jamdict.py	/^MY_DIR = os.path.abspath(os.path.dirname(__file__))$/;"	v
+MY_FOLDER	jamdict/jmdict_sqlite.py	/^MY_FOLDER = os.path.dirname(os.path.abspath(__file__))$/;"	v
+MY_FOLDER	jamdict/kanjidic2_sqlite.py	/^MY_FOLDER = os.path.dirname(os.path.abspath(__file__))$/;"	v
+Meaning	jamdict/kanjidic2.py	/^class Meaning(object):$/;"	c
+Meaning	jamdict/kanjidic2_sqlite.py	/^from .kanjidic2 import Character, CodePoint, Radical, Variant, DicRef, QueryCode, RMGroup, Reading, Meaning$/;"	i
+Meta	jamdict/jmdict.py	/^class Meta(object):$/;"	c
+Meta	jamdict/jmdict_sqlite.py	/^from .jmdict import Meta, JMDEntry, EntryInfo, Link, BibInfo, Audit, KanjiForm, KanaForm, Sense, SenseGloss, LSource$/;"	i
+Meta	jamdict/kanjidic2_sqlite.py	/^from .jmdict import Meta$/;"	i
+OrderedDict	jamdict/util.py	/^from collections import OrderedDict$/;"	i
+QueryCode	jamdict/kanjidic2.py	/^class QueryCode(object):$/;"	c
+QueryCode	jamdict/kanjidic2_sqlite.py	/^from .kanjidic2 import Character, CodePoint, Radical, Variant, DicRef, QueryCode, RMGroup, Reading, Meaning$/;"	i
+RMGroup	jamdict/kanjidic2.py	/^class RMGroup(object):$/;"	c
+RMGroup	jamdict/kanjidic2_sqlite.py	/^from .kanjidic2 import Character, CodePoint, Radical, Variant, DicRef, QueryCode, RMGroup, Reading, Meaning$/;"	i
+Radical	jamdict/kanjidic2.py	/^class Radical(object):$/;"	c
+Radical	jamdict/kanjidic2_sqlite.py	/^from .kanjidic2 import Character, CodePoint, Radical, Variant, DicRef, QueryCode, RMGroup, Reading, Meaning$/;"	i
+Reading	jamdict/kanjidic2.py	/^class Reading(object):$/;"	c
+Reading	jamdict/kanjidic2_sqlite.py	/^from .kanjidic2 import Character, CodePoint, Radical, Variant, DicRef, QueryCode, RMGroup, Reading, Meaning$/;"	i
+Response	jamdol-flask.py	/^from flask import Flask, Response$/;"	i
+SCRIPT_FOLDER	jamdict/jmdict_sqlite.py	/^SCRIPT_FOLDER = os.path.join(MY_FOLDER, 'data')$/;"	v
+SCRIPT_FOLDER	jamdict/kanjidic2_sqlite.py	/^SCRIPT_FOLDER = os.path.join(MY_FOLDER, 'data')$/;"	v
+Schema	jamdict/jmdict_sqlite.py	/^from puchikarui import Schema$/;"	i
+Schema	jamdict/kanjidic2_sqlite.py	/^from puchikarui import Schema$/;"	i
+Sense	jamdict/data/setup_jmdict.sql	/^CREATE TABLE Sense ($/;"	t
+Sense	jamdict/jmdict.py	/^class Sense(object):$/;"	c
+Sense	jamdict/jmdict_sqlite.py	/^from .jmdict import Meta, JMDEntry, EntryInfo, Link, BibInfo, Audit, KanjiForm, KanaForm, Sense, SenseGloss, LSource$/;"	i
+Sense.ID	jamdict/data/setup_jmdict.sql	/^       ID INTEGER PRIMARY KEY$/;"	F
+Sense.Sense_idseq	jamdict/data/setup_jmdict.sql	/^CREATE INDEX Sense_idseq ON Sense(idseq);$/;"	i
+Sense.idseq	jamdict/data/setup_jmdict.sql	/^       ,idseq INTEGER$/;"	F
+SenseGloss	jamdict/data/setup_jmdict.sql	/^CREATE TABLE SenseGloss ($/;"	t
+SenseGloss	jamdict/jmdict.py	/^class SenseGloss(object):$/;"	c
+SenseGloss	jamdict/jmdict_sqlite.py	/^from .jmdict import Meta, JMDEntry, EntryInfo, Link, BibInfo, Audit, KanjiForm, KanaForm, Sense, SenseGloss, LSource$/;"	i
+SenseGloss.SenseGloss_gend	jamdict/data/setup_jmdict.sql	/^CREATE INDEX SenseGloss_gend ON SenseGloss(gend);$/;"	i
+SenseGloss.SenseGloss_lang	jamdict/data/setup_jmdict.sql	/^CREATE INDEX SenseGloss_lang ON SenseGloss(lang);$/;"	i
+SenseGloss.SenseGloss_sid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX SenseGloss_sid ON SenseGloss(sid);$/;"	i
+SenseGloss.SenseGloss_text	jamdict/data/setup_jmdict.sql	/^CREATE INDEX SenseGloss_text ON SenseGloss(text);$/;"	i
+SenseGloss.gend	jamdict/data/setup_jmdict.sql	/^       ,gend TEXT$/;"	F
+SenseGloss.lang	jamdict/data/setup_jmdict.sql	/^       ,lang TEXT$/;"	F
+SenseGloss.sid	jamdict/data/setup_jmdict.sql	/^       sid INTEGER$/;"	F
+SenseGloss.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+SenseInfo	jamdict/data/setup_jmdict.sql	/^CREATE TABLE SenseInfo ($/;"	t
+SenseInfo.SenseInfo_sid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX SenseInfo_sid ON SenseInfo(sid);$/;"	i
+SenseInfo.SenseInfo_text	jamdict/data/setup_jmdict.sql	/^CREATE INDEX SenseInfo_text ON SenseInfo(text);$/;"	i
+SenseInfo.sid	jamdict/data/setup_jmdict.sql	/^       sid INTEGER$/;"	F
+SenseInfo.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+SenseSource	jamdict/data/setup_jmdict.sql	/^CREATE TABLE SenseSource ($/;"	t
+SenseSource.SenseSource_sid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX SenseSource_sid ON SenseSource(sid);$/;"	i
+SenseSource.SenseSource_text	jamdict/data/setup_jmdict.sql	/^CREATE INDEX SenseSource_text ON SenseSource(text);$/;"	i
+SenseSource.lang	jamdict/data/setup_jmdict.sql	/^       ,lang TEXT$/;"	F
+SenseSource.lstype	jamdict/data/setup_jmdict.sql	/^       ,lstype TEXT$/;"	F
+SenseSource.sid	jamdict/data/setup_jmdict.sql	/^       sid INTEGER$/;"	F
+SenseSource.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+SenseSource.wasei	jamdict/data/setup_jmdict.sql	/^       ,wasei TEXT$/;"	F
+TEST_DATA	test/__init__.py	/^TEST_DATA = os.path.join(TEST_DIR, 'data')$/;"	v
+TEST_DATA	test/test_jamdict.py	/^TEST_DATA = os.path.join(MY_DIR, 'data')$/;"	v
+TEST_DATA	test/test_jmdict_sqlite.py	/^TEST_DATA = os.path.join(TEST_DIR, 'data')$/;"	v
+TEST_DATA	test/test_kanjidic2_sqlite.py	/^TEST_DATA = os.path.join(TEST_DIR, 'data')$/;"	v
+TEST_DB	test/test_jamdict.py	/^TEST_DB = os.path.join(TEST_DATA, 'jamdict_test.db')$/;"	v
+TEST_DB	test/test_jmdict_sqlite.py	/^TEST_DB = os.path.join(TEST_DATA, 'test.db')$/;"	v
+TEST_DB	test/test_kanjidic2_sqlite.py	/^TEST_DB = os.path.join(TEST_DATA, 'jamcha.db')$/;"	v
+TEST_DIR	test/__init__.py	/^TEST_DIR = os.path.dirname(__file__)$/;"	v
+TEST_DIR	test/test_jmdict_sqlite.py	/^TEST_DIR = os.path.dirname(os.path.realpath(__file__))$/;"	v
+TEST_DIR	test/test_kanjidic2_sqlite.py	/^TEST_DIR = os.path.dirname(os.path.realpath(__file__))$/;"	v
+TestConfig	test/test_jamdict.py	/^class TestConfig(unittest.TestCase):$/;"	c
+TestJamdictSQLite	test/test_jamdict.py	/^class TestJamdictSQLite(unittest.TestCase):$/;"	c
+TestJamdictSQLite	test/test_jmdict_sqlite.py	/^class TestJamdictSQLite(unittest.TestCase):$/;"	c
+TestJamdictSQLite	test/test_kanjidic2_sqlite.py	/^class TestJamdictSQLite(unittest.TestCase):$/;"	c
+TestJamdictXML	test/test_jamdict.py	/^class TestJamdictXML(unittest.TestCase):$/;"	c
+TestModels	test/test_jamdict.py	/^class TestModels(unittest.TestCase):$/;"	c
+TextReport	jamdict/tools.py	/^from chirptext import confirm, TextReport, Timer$/;"	i
+Timer	jamdict/tools.py	/^from chirptext import confirm, TextReport, Timer$/;"	i
+Variant	jamdict/kanjidic2.py	/^class Variant(object):$/;"	c
+Variant	jamdict/kanjidic2_sqlite.py	/^from .kanjidic2 import Character, CodePoint, Radical, Variant, DicRef, QueryCode, RMGroup, Reading, Meaning$/;"	i
+__all__	jamdict/__init__.py	/^__all__ = ['Jamdict', 'JMDictSQLite', 'JMDictXML', 'KanjiDic2SQLite', 'KanjiDic2XML',$/;"	v
+__app_config	jamdict/config.py	/^__app_config = AppConfig('jamdict', mode=AppConfig.JSON, working_dir=__jamdict_home)$/;"	v
+__author__	jamdict/__init__.py	/^from .__version__ import __author__, __email__, __copyright__, __maintainer__$/;"	i
+__author__	jamdict/__version__.py	/^__author__ = "Le Tuan Anh"$/;"	v
+__author__	jamdol-flask.py	/^__author__ = "Le Tuan Anh <tuananh.ke@gmail.com>"$/;"	v
+__author__	test/test_jamdict.py	/^__author__ = "Le Tuan Anh <tuananh.ke@gmail.com>"$/;"	v
+__author__	test/test_jmdict_sqlite.py	/^__author__ = "Le Tuan Anh <tuananh.ke@gmail.com>"$/;"	v
+__author__	test/test_kanjidic2_sqlite.py	/^__author__ = "Le Tuan Anh <tuananh.ke@gmail.com>"$/;"	v
+__copyright__	jamdict/__init__.py	/^from .__version__ import __author__, __email__, __copyright__, __maintainer__$/;"	i
+__copyright__	jamdict/__version__.py	/^__copyright__ = "Copyright (c) 2016, Le Tuan Anh"$/;"	v
+__copyright__	jamdol-flask.py	/^__copyright__ = "Copyright 2017, jamdict"$/;"	v
+__copyright__	test/test_jamdict.py	/^__copyright__ = "Copyright 2016, jamdict"$/;"	v
+__copyright__	test/test_jmdict_sqlite.py	/^__copyright__ = "Copyright 2016, jamdict"$/;"	v
+__copyright__	test/test_kanjidic2_sqlite.py	/^__copyright__ = "Copyright 2017, jamdict"$/;"	v
+__credits__	jamdict/__init__.py	/^from .__version__ import __credits__, __license__, __description__, __url__$/;"	i
+__credits__	jamdict/__version__.py	/^__credits__ = []$/;"	v
+__credits__	jamdol-flask.py	/^__credits__ = []$/;"	v
+__del__	jamdict/util.py	/^    def __del__(self):$/;"	m	class:Jamdict	file:
+__description__	jamdict/__init__.py	/^from .__version__ import __credits__, __license__, __description__, __url__$/;"	i
+__description__	jamdict/__version__.py	/^__description__ = "Python library for manipulating Jim Breen's JMdict & KanjiDic2"$/;"	v
+__email__	jamdict/__init__.py	/^from .__version__ import __author__, __email__, __copyright__, __maintainer__$/;"	i
+__email__	jamdict/__version__.py	/^__email__ = "tuananh.ke@gmail.com"$/;"	v
+__email__	jamdol-flask.py	/^__email__ = "<tuananh.ke@gmail.com>"$/;"	v
+__getitem__	jamdict/jmdict.py	/^    def __getitem__(self, idx):$/;"	m	class:JMDEntry	file:
+__getitem__	jamdict/kanjidic2.py	/^    def __getitem__(self, idx):$/;"	f	file:
+__getitem__	jamdict/util.py	/^    def __getitem__(self, idx):$/;"	m	class:JMDictXML	file:
+__getitem__	jamdict/util.py	/^    def __getitem__(self, idx):$/;"	m	class:KanjiDic2XML	file:
+__init__	jamdict/jmdict.py	/^    def __init__(self):$/;"	m	class:EntryInfo
+__init__	jamdict/jmdict.py	/^    def __init__(self):$/;"	m	class:JMDictXMLParser
+__init__	jamdict/jmdict.py	/^    def __init__(self):$/;"	m	class:Sense
+__init__	jamdict/jmdict.py	/^    def __init__(self, idseq=''):$/;"	m	class:JMDEntry
+__init__	jamdict/jmdict.py	/^    def __init__(self, key='', value=''):$/;"	m	class:Meta
+__init__	jamdict/jmdict.py	/^    def __init__(self, lang, gend, text):$/;"	m	class:SenseGloss
+__init__	jamdict/jmdict.py	/^    def __init__(self, lang, lstype, wasei, text):$/;"	m	class:LSource
+__init__	jamdict/jmdict.py	/^    def __init__(self, tag, desc, uri):$/;"	m	class:Link
+__init__	jamdict/jmdict.py	/^    def __init__(self, tag='', text=''):$/;"	m	class:BibInfo
+__init__	jamdict/jmdict.py	/^    def __init__(self, text=''):$/;"	m	class:KanjiForm
+__init__	jamdict/jmdict.py	/^    def __init__(self, text='', nokanji=False):$/;"	m	class:KanaForm
+__init__	jamdict/jmdict.py	/^    def __init__(self, upd_date, upd_detl):$/;"	m	class:Audit
+__init__	jamdict/jmdict_sqlite.py	/^    def __init__(self, data_source=":memory:", setup_script=None, setup_file=None, *args, **kwargs):$/;"	m	class:JMDictSchema
+__init__	jamdict/jmdict_sqlite.py	/^    def __init__(self, db_path, setup_script=None, setup_file=None, *args, **kwargs):$/;"	m	class:JMDictSQLite
+__init__	jamdict/kanjidic2.py	/^    def __init__(self):$/;"	m	class:Character
+__init__	jamdict/kanjidic2.py	/^    def __init__(self):$/;"	m	class:Kanjidic2XMLParser
+__init__	jamdict/kanjidic2.py	/^    def __init__(self, cp_type='', value=''):$/;"	m	class:CodePoint
+__init__	jamdict/kanjidic2.py	/^    def __init__(self, dr_type='', value='', m_vol='', m_page=''):$/;"	m	class:DicRef
+__init__	jamdict/kanjidic2.py	/^    def __init__(self, file_version, database_version, date_of_creation):$/;"	m	class:KanjiDic2
+__init__	jamdict/kanjidic2.py	/^    def __init__(self, qc_type='', value='', skip_misclass=""):$/;"	m	class:QueryCode
+__init__	jamdict/kanjidic2.py	/^    def __init__(self, r_type='', value='', on_type="", r_status=""):$/;"	m	class:Reading
+__init__	jamdict/kanjidic2.py	/^    def __init__(self, rad_type='', value=''):$/;"	m	class:Radical
+__init__	jamdict/kanjidic2.py	/^    def __init__(self, readings=None, meanings=None):$/;"	m	class:RMGroup
+__init__	jamdict/kanjidic2.py	/^    def __init__(self, value='', m_lang=''):$/;"	m	class:Meaning
+__init__	jamdict/kanjidic2.py	/^    def __init__(self, var_type='', value=''):$/;"	m	class:Variant
+__init__	jamdict/kanjidic2_sqlite.py	/^    def __init__(self, data_source, setup_script=None, setup_file=None, *args, **kwargs):$/;"	m	class:KanjiDic2Schema
+__init__	jamdict/kanjidic2_sqlite.py	/^    def __init__(self, db_path, setup_script=None, setup_file=None, *args, **kwargs):$/;"	m	class:KanjiDic2SQLite
+__init__	jamdict/util.py	/^    def __init__(self, data_source, setup_script=None, setup_file=None, *args, **kwargs):$/;"	m	class:JamdictSQLite
+__init__	jamdict/util.py	/^    def __init__(self, db_file=None, kd2_file=None, jmd_xml_file=None, kd2_xml_file=None, auto_config=True, auto_expand=True, reuse_ctx=True, **kwargs):$/;"	m	class:Jamdict
+__init__	jamdict/util.py	/^    def __init__(self, entries):$/;"	m	class:JMDictXML
+__init__	jamdict/util.py	/^    def __init__(self, entries, chars):$/;"	m	class:LookupResult
+__init__	jamdict/util.py	/^    def __init__(self, kd2):$/;"	m	class:KanjiDic2XML
+__init__	kotoba.py	/^    def __init__(self):$/;"	m	class:Kotoba
+__jamdict_home	jamdict/config.py	/^__jamdict_home = os.environ.get('JAMDICT_HOME', MY_DIR)$/;"	v
+__len__	jamdict/jmdict.py	/^    def __len__(self):$/;"	m	class:JMDEntry	file:
+__len__	jamdict/kanjidic2.py	/^    def __len__(self):$/;"	f	file:
+__len__	jamdict/util.py	/^    def __len__(self):$/;"	m	class:JMDictXML	file:
+__len__	jamdict/util.py	/^    def __len__(self):$/;"	m	class:KanjiDic2XML	file:
+__license__	jamdict/__init__.py	/^from .__version__ import __credits__, __license__, __description__, __url__$/;"	i
+__license__	jamdict/__version__.py	/^__license__ = "MIT License"$/;"	v
+__license__	jamdol-flask.py	/^__license__ = "MIT"$/;"	v
+__license__	test/test_jamdict.py	/^__license__ = "MIT"$/;"	v
+__license__	test/test_jmdict_sqlite.py	/^__license__ = "MIT"$/;"	v
+__license__	test/test_kanjidic2_sqlite.py	/^__license__ = "MIT"$/;"	v
+__maintainer__	jamdict/__init__.py	/^from .__version__ import __author__, __email__, __copyright__, __maintainer__$/;"	i
+__maintainer__	jamdict/__version__.py	/^__maintainer__ = "Le Tuan Anh"$/;"	v
+__maintainer__	jamdol-flask.py	/^__maintainer__ = "Le Tuan Anh"$/;"	v
+__repr__	jamdict/jmdict.py	/^    def __repr__(self):$/;"	m	class:JMDEntry	file:
+__repr__	jamdict/jmdict.py	/^    def __repr__(self):$/;"	m	class:KanaForm	file:
+__repr__	jamdict/jmdict.py	/^    def __repr__(self):$/;"	m	class:KanjiForm	file:
+__repr__	jamdict/jmdict.py	/^    def __repr__(self):$/;"	m	class:Meta	file:
+__repr__	jamdict/jmdict.py	/^    def __repr__(self):$/;"	m	class:Sense	file:
+__repr__	jamdict/jmdict.py	/^    def __repr__(self):$/;"	m	class:SenseGloss	file:
+__repr__	jamdict/kanjidic2.py	/^    def __repr__(self):$/;"	f	file:
+__repr__	jamdict/kanjidic2.py	/^    def __repr__(self):$/;"	m	class:Character	file:
+__repr__	jamdict/kanjidic2.py	/^    def __repr__(self):$/;"	m	class:CodePoint	file:
+__repr__	jamdict/kanjidic2.py	/^    def __repr__(self):$/;"	m	class:Meaning	file:
+__repr__	jamdict/kanjidic2.py	/^    def __repr__(self):$/;"	m	class:RMGroup	file:
+__repr__	jamdict/kanjidic2.py	/^    def __repr__(self):$/;"	m	class:Radical	file:
+__repr__	jamdict/kanjidic2.py	/^    def __repr__(self):$/;"	m	class:Reading	file:
+__repr__	jamdict/kanjidic2.py	/^    def __repr__(self):$/;"	m	class:Variant	file:
+__repr__	jamdict/util.py	/^    def __repr__(self):$/;"	m	class:LookupResult	file:
+__status__	jamdict/__init__.py	/^from .__version__ import __version_major__, __version_long__, __version__, __status__$/;"	i
+__status__	jamdict/__version__.py	/^__status__ = "Prototype"$/;"	v
+__status__	jamdol-flask.py	/^__status__ = "Prototype"$/;"	v
+__str__	jamdict/jmdict.py	/^    def __str__(self):$/;"	m	class:JMDEntry	file:
+__str__	jamdict/jmdict.py	/^    def __str__(self):$/;"	m	class:KanaForm	file:
+__str__	jamdict/jmdict.py	/^    def __str__(self):$/;"	m	class:KanjiForm	file:
+__str__	jamdict/jmdict.py	/^    def __str__(self):$/;"	m	class:Meta	file:
+__str__	jamdict/jmdict.py	/^    def __str__(self):$/;"	m	class:Sense	file:
+__str__	jamdict/jmdict.py	/^    def __str__(self):$/;"	m	class:SenseGloss	file:
+__str__	jamdict/kanjidic2.py	/^    def __str__(self):$/;"	f	file:
+__str__	jamdict/kanjidic2.py	/^    def __str__(self):$/;"	m	class:Character	file:
+__str__	jamdict/kanjidic2.py	/^    def __str__(self):$/;"	m	class:CodePoint	file:
+__str__	jamdict/kanjidic2.py	/^    def __str__(self):$/;"	m	class:Meaning	file:
+__str__	jamdict/kanjidic2.py	/^    def __str__(self):$/;"	m	class:RMGroup	file:
+__str__	jamdict/kanjidic2.py	/^    def __str__(self):$/;"	m	class:Radical	file:
+__str__	jamdict/kanjidic2.py	/^    def __str__(self):$/;"	m	class:Reading	file:
+__str__	jamdict/kanjidic2.py	/^    def __str__(self):$/;"	m	class:Variant	file:
+__str__	jamdict/util.py	/^    def __str__(self):$/;"	m	class:LookupResult	file:
+__url__	jamdict/__init__.py	/^from .__version__ import __credits__, __license__, __description__, __url__$/;"	i
+__url__	jamdict/__version__.py	/^__url__ = "https:\/\/github.com\/neocl\/jamdict"$/;"	v
+__version__	jamdict/__init__.py	/^from .__version__ import __version_major__, __version_long__, __version__, __status__$/;"	i
+__version__	jamdict/__version__.py	/^__version__ = "{}a5".format(__version_major__)$/;"	v
+__version__	jamdol-flask.py	/^__version__ = "0.1"$/;"	v
+__version_long__	jamdict/__init__.py	/^from .__version__ import __version_major__, __version_long__, __version__, __status__$/;"	i
+__version_long__	jamdict/__version__.py	/^__version_long__ = "{} - Alpha".format(__version_major__)$/;"	v
+__version_major__	jamdict/__init__.py	/^from .__version__ import __version_major__, __version_long__, __version__, __status__$/;"	i
+__version_major__	jamdict/__version__.py	/^__version_major__ = "0.1"$/;"	v
+_get_config_manager	jamdict/config.py	/^def _get_config_manager():$/;"	f
+add_data_config	jamdict/tools.py	/^def add_data_config(parser):$/;"	f
+antonym	jamdict/data/setup_jmdict.sql	/^CREATE TABLE antonym ($/;"	t
+antonym.antonym_sid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX antonym_sid ON antonym(sid);$/;"	i
+antonym.antonym_text	jamdict/data/setup_jmdict.sql	/^CREATE INDEX antonym_text ON antonym(text);$/;"	i
+antonym.sid	jamdict/data/setup_jmdict.sql	/^       sid INTEGER$/;"	F
+antonym.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+app	app.py	/^app = Flask(__name__)$/;"	v
+app	jamdol-flask.py	/^app = Flask(__name__, static_url_path="")$/;"	v
+author	setup.py	/^    author=pkg_info['__author__'],$/;"	v
+author_email	setup.py	/^    author_email=pkg_info['__email__'],$/;"	v
+char_by_id	jamdict/kanjidic2_sqlite.py	/^    def char_by_id(self, cid, ctx=None):$/;"	m	class:KanjiDic2SQLite
+character	jamdict/data/setup_kanjidic2.sql	/^CREATE TABLE character ($/;"	t
+character.ID	jamdict/data/setup_kanjidic2.sql	/^       ID INTEGER PRIMARY KEY AUTOINCREMENT,$/;"	F
+character.character_grade	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX character_grade ON character(grade);$/;"	i
+character.character_jlpt	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX character_jlpt ON character(jlpt);$/;"	i
+character.character_literal	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX character_literal ON character(literal);$/;"	i
+character.character_stroke_count	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX character_stroke_count ON character(stroke_count);$/;"	i
+character.freq	jamdict/data/setup_kanjidic2.sql	/^       freq TEXT,$/;"	F
+character.grade	jamdict/data/setup_kanjidic2.sql	/^       grade TEXT,$/;"	F
+character.jlpt	jamdict/data/setup_kanjidic2.sql	/^       jlpt TEXT$/;"	F
+character.literal	jamdict/data/setup_kanjidic2.sql	/^       literal TEXT NOT NULL,$/;"	F
+character.stroke_count	jamdict/data/setup_kanjidic2.sql	/^       stroke_count INTEGER,$/;"	F
+check	app.py	/^def check():$/;"	f
+check_input	app.py	/^def check_input(word, hidden):$/;"	f
+chio	jamdict/jmdict.py	/^from chirptext import chio$/;"	i
+chio	jamdict/kanjidic2.py	/^from chirptext import chio$/;"	i
+classifiers	setup.py	/^    classifiers=['Programming Language :: Python',$/;"	v
+codepoint	jamdict/data/setup_kanjidic2.sql	/^CREATE TABLE codepoint ($/;"	t
+codepoint.cid	jamdict/data/setup_kanjidic2.sql	/^       cid INTEGER$/;"	F
+codepoint.codepoint_value	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX codepoint_value ON codepoint(value);$/;"	i
+codepoint.cp_type	jamdict/data/setup_kanjidic2.sql	/^       ,cp_type TEXT$/;"	F
+codepoint.value	jamdict/data/setup_kanjidic2.sql	/^       ,value TEXT$/;"	F
+config	jamdict/tools.py	/^from jamdict import config$/;"	i
+config	jamdict/util.py	/^from . import config$/;"	i
+config	test/test_jamdict.py	/^from jamdict import config$/;"	i
+confirm	jamdict/tools.py	/^from chirptext import confirm, TextReport, Timer$/;"	i
+data_dir	jamdict/config.py	/^def data_dir():$/;"	f
+db	test/test_jmdict_sqlite.py	/^    db = JMDictSQLite(TEST_DB)$/;"	v	class:TestJamdictSQLite
+db	test/test_kanjidic2_sqlite.py	/^    db = KanjiDic2SQLite(TEST_DB)$/;"	v	class:TestJamdictSQLite
+db_file	jamdict/util.py	/^    def db_file(self):$/;"	m	class:Jamdict
+db_file	jamdict/util.py	/^    def db_file(self, value):$/;"	m	class:Jamdict
+dd	jamdict/util.py	/^from collections import defaultdict as dd$/;"	i
+decorated_function	jamdol-flask.py	/^    def decorated_function(*args, **kwargs):$/;"	f	function:jsonp
+description	setup.py	/^    description=pkg_info['__description__'],$/;"	v
+dialect	jamdict/data/setup_jmdict.sql	/^CREATE TABLE dialect ($/;"	t
+dialect.dialect_sid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX dialect_sid ON dialect(sid);$/;"	i
+dialect.dialect_text	jamdict/data/setup_jmdict.sql	/^CREATE INDEX dialect_text ON dialect(text);$/;"	i
+dialect.sid	jamdict/data/setup_jmdict.sql	/^       sid INTEGER$/;"	F
+dialect.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+dic_ref	jamdict/data/setup_kanjidic2.sql	/^CREATE TABLE dic_ref ($/;"	t
+dic_ref.cid	jamdict/data/setup_kanjidic2.sql	/^       cid INTEGER$/;"	F
+dic_ref.dic_ref_value	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX dic_ref_value ON dic_ref(value);$/;"	i
+dic_ref.dr_type	jamdict/data/setup_kanjidic2.sql	/^       ,dr_type TEXT$/;"	F
+dic_ref.m_page	jamdict/data/setup_kanjidic2.sql	/^       ,m_page TEXT$/;"	F
+dic_ref.m_vol	jamdict/data/setup_kanjidic2.sql	/^n       ,m_vol TEXT$/;"	F
+dic_ref.value	jamdict/data/setup_kanjidic2.sql	/^       ,value TEXT$/;"	F
+display_result	kotoba.py	/^    def display_result(self, word, entry, max_score):$/;"	m	class:Kotoba
+dump_result	jamdict/tools.py	/^def dump_result(results, report=None):$/;"	f
+etree	jamdict/jmdict.py	/^from lxml import etree$/;"	i
+etree	jamdict/kanjidic2.py	/^from lxml import etree$/;"	i
+field	jamdict/data/setup_jmdict.sql	/^CREATE TABLE field ($/;"	t
+field.field_sid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX field_sid ON field(sid);$/;"	i
+field.field_text	jamdict/data/setup_jmdict.sql	/^CREATE INDEX field_text ON field(text);$/;"	i
+field.sid	jamdict/data/setup_jmdict.sql	/^       sid INTEGER$/;"	F
+field.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+file_status	jamdict/tools.py	/^def file_status(file_path):$/;"	f
+find_kotoba	kotoba.py	/^    def find_kotoba(self, word, hidden):$/;"	m	class:Kotoba
+flask	jamdol-flask.py	/^import flask$/;"	i
+from_file	jamdict/util.py	/^    def from_file(filename):$/;"	m	class:JMDictXML
+from_file	jamdict/util.py	/^    def from_file(filename):$/;"	m	class:KanjiDic2XML
+function	test/test_jmdict_sqlite.py	/^        print("Testing JMDict import function")$/;"	i
+generate_moras	kotoba.py	/^    def generate_moras(self):$/;"	m	class:Kotoba
+getLogger	jamdict/config.py	/^def getLogger():$/;"	f
+getLogger	jamdict/jmdict_sqlite.py	/^def getLogger():$/;"	f
+getLogger	jamdict/kanjidic2.py	/^def getLogger():$/;"	f
+getLogger	jamdict/kanjidic2_sqlite.py	/^def getLogger():$/;"	f
+getLogger	jamdict/util.py	/^def getLogger():$/;"	f
+getLogger	jamdol-flask.py	/^def getLogger():$/;"	f
+getLogger	test/test_jamdict.py	/^def getLogger():$/;"	f
+getLogger	test/test_jmdict_sqlite.py	/^def getLogger():$/;"	f
+getLogger	test/test_kanjidic2_sqlite.py	/^def getLogger():$/;"	f
+get_attrib	jamdict/jmdict.py	/^    def get_attrib(self, a_tag, attr_name, default_value=''):$/;"	m	class:JMDictXMLParser
+get_attrib	jamdict/kanjidic2.py	/^    def get_attrib(self, a_tag, attr_name, default_value=''):$/;"	m	class:Kanjidic2XMLParser
+get_char	jamdict/kanjidic2_sqlite.py	/^    def get_char(self, literal, ctx=None):$/;"	m	class:KanjiDic2SQLite
+get_char	jamdict/util.py	/^    def get_char(self, literal, ctx=None):$/;"	m	class:Jamdict
+get_entry	jamdict/jmdict_sqlite.py	/^    def get_entry(self, idseq, ctx=None):$/;"	m	class:JMDictSQLite
+get_entry	jamdict/util.py	/^    def get_entry(self, idseq):$/;"	m	class:Jamdict
+get_entry	jamdol-flask.py	/^def get_entry(idseq):$/;"	f
+get_file	jamdict/config.py	/^def get_file(file_key):$/;"	f
+get_jam	jamdict/tools.py	/^def get_jam(cli, args):$/;"	f
+get_single	jamdict/jmdict.py	/^    def get_single(self, tag_name, a_tag):$/;"	m	class:JMDictXMLParser
+gu	jamdict/jmdict_sqlite.py	/^    gu=JAMDICT_URL$/;"	v
+gu	jamdict/kanjidic2_sqlite.py	/^    gu=JAMDICT_URL$/;"	v
+gv	jamdict/jmdict_sqlite.py	/^    gv=JAMDICT_VERSION,$/;"	v
+gv	jamdict/kanjidic2_sqlite.py	/^    gv=JAMDICT_VERSION,$/;"	v
+has_kd2	jamdict/util.py	/^    def has_kd2(self):$/;"	m	class:Jamdict
+home_dir	jamdict/config.py	/^def home_dir():$/;"	f
+import_data	jamdict/tools.py	/^def import_data(cli, args):$/;"	f
+import_data	jamdict/util.py	/^    def import_data(self):$/;"	m	class:Jamdict
+include_package_data	setup.py	/^    include_package_data=True,$/;"	v
+index	jamdol-flask.py	/^def index():$/;"	f
+insert_char	jamdict/kanjidic2_sqlite.py	/^    def insert_char(self, c, ctx=None):$/;"	m	class:KanjiDic2SQLite
+insert_chars	jamdict/kanjidic2_sqlite.py	/^    def insert_chars(self, chars, ctx=None):$/;"	m	class:KanjiDic2SQLite
+insert_entries	jamdict/jmdict_sqlite.py	/^    def insert_entries(self, entries, ctx=None):$/;"	m	class:JMDictSQLite
+insert_entry	jamdict/jmdict_sqlite.py	/^    def insert_entry(self, entry, ctx=None):$/;"	m	class:JMDictSQLite
+install_requires	setup.py	/^    install_requires=requirements,$/;"	v
+io	setup.py	/^import io$/;"	i
+is_available	jamdict/util.py	/^    def is_available(self):$/;"	m	class:Jamdict
+jam	jamdict_demo.py	/^jam = Jamdict()$/;"	v
+jmd	jamdol-flask.py	/^jmd = Jamdict()$/;"	v
+jmdict	jamdict/util.py	/^    def jmdict(self):$/;"	m	class:Jamdict
+jmdict_xml	jamdict/util.py	/^    def jmdict_xml(self):$/;"	m	class:Jamdict
+json	app.py	/^import json$/;"	i
+json	jamdol-flask.py	/^import json$/;"	i
+jsonify	app.py	/^from flask import Flask, jsonify, request$/;"	i
+jsonp	jamdol-flask.py	/^def jsonp(func):$/;"	f
+jsonpickle	app.py	/^import jsonpickle$/;"	i
+ju	jamdict/jmdict_sqlite.py	/^    ju=JMDICT_URL,$/;"	v
+jv	jamdict/jmdict_sqlite.py	/^    jv=JMDICT_VERSION,$/;"	v
+kana_forms	jamdict_demo.py	/^kana_forms = ' '.join([x.text for x in otenki.kana_forms])$/;"	v
+kanji_forms	jamdict_demo.py	/^kanji_forms = ' '.join([x.text for x in otenki.kanji_forms])$/;"	v
+kd2	jamdict/util.py	/^    def kd2(self):$/;"	m	class:Jamdict
+kd2_file	jamdict/util.py	/^    def kd2_file(self):$/;"	m	class:Jamdict
+kd2_file	jamdict/util.py	/^    def kd2_file(self, value):$/;"	m	class:Jamdict
+kd2_xml	jamdict/util.py	/^    def kd2_xml(self):$/;"	m	class:Jamdict
+keywords	setup.py	/^    keywords="nlp",$/;"	v
+license	setup.py	/^    license=pkg_info['__license__'],$/;"	v
+logger	jamdict/jmdict.py	/^logger = logging.getLogger(__name__)$/;"	v
+logging	jamdict/config.py	/^import logging$/;"	i
+logging	jamdict/jmdict.py	/^import logging$/;"	i
+logging	jamdict/jmdict_sqlite.py	/^import logging$/;"	i
+logging	jamdict/kanjidic2.py	/^import logging$/;"	i
+logging	jamdict/kanjidic2_sqlite.py	/^import logging$/;"	i
+logging	jamdict/util.py	/^import logging$/;"	i
+logging	jamdol-flask.py	/^import logging$/;"	i
+logging	kotoba.py	/^import logging$/;"	i
+logging	test/test_jamdict.py	/^import logging$/;"	i
+logging	test/test_jmdict_sqlite.py	/^import logging$/;"	i
+logging	test/test_kanjidic2_sqlite.py	/^import logging$/;"	i
+long_description	setup.py	/^    long_description=long_description,$/;"	v
+long_description	setup.py	/^long_description = read(readme_file)$/;"	v
+long_description_content_type	setup.py	/^    long_description_content_type='text\/markdown',$/;"	v
+lookup	jamdict/tools.py	/^def lookup(cli, args):$/;"	f
+lookup	jamdict/util.py	/^    def lookup(self, a_query):$/;"	m	class:JMDictXML
+lookup	jamdict/util.py	/^    def lookup(self, char):$/;"	m	class:KanjiDic2XML
+lookup	jamdict/util.py	/^    def lookup(self, query, strict_lookup=False, lookup_chars=True, ctx=None, **kwargs):$/;"	m	class:Jamdict
+main	jamdict/tools.py	/^def main():$/;"	f
+meaning	jamdict/data/setup_kanjidic2.sql	/^CREATE TABLE meaning ($/;"	t
+meaning.gid	jamdict/data/setup_kanjidic2.sql	/^       gid INTEGER$/;"	F
+meaning.m_lang	jamdict/data/setup_kanjidic2.sql	/^       ,m_lang TEXT$/;"	F
+meaning.meaning_m_lang	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX meaning_m_lang ON meaning(m_lang);$/;"	i
+meaning.meaning_value	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX meaning_value ON meaning(value);$/;"	i
+meaning.value	jamdict/data/setup_kanjidic2.sql	/^       ,value TEXT$/;"	F
+misc	jamdict/data/setup_jmdict.sql	/^CREATE TABLE misc ($/;"	t
+misc.misc_sid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX misc_sid ON misc(sid);$/;"	i
+misc.misc_text	jamdict/data/setup_jmdict.sql	/^CREATE INDEX misc_text ON misc(text);$/;"	i
+misc.sid	jamdict/data/setup_jmdict.sql	/^       sid INTEGER$/;"	F
+misc.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+module.exports.presets	client/babel.config.js	/^  presets: [$/;"	p
+name	setup.py	/^    name='jamdict',  # package file name (<package-name>-version.tar.gz)$/;"	v
+nanori	jamdict/data/setup_kanjidic2.sql	/^CREATE TABLE nanori ($/;"	t
+nanori.cid	jamdict/data/setup_kanjidic2.sql	/^       cid INTEGER$/;"	F
+nanori.nanori_value	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX nanori_value ON nanori(value);$/;"	i
+nanori.value	jamdict/data/setup_kanjidic2.sql	/^       ,value TEXT$/;"	F
+os	jamdict/config.py	/^import os$/;"	i
+os	jamdict/jmdict.py	/^import os$/;"	i
+os	jamdict/jmdict_sqlite.py	/^import os$/;"	i
+os	jamdict/kanjidic2.py	/^import os$/;"	i
+os	jamdict/kanjidic2_sqlite.py	/^import os$/;"	i
+os	jamdict/tools.py	/^import os$/;"	i
+os	jamdict/util.py	/^import os$/;"	i
+os	jamdict_demo.py	/^import os$/;"	i
+os	jamdol-flask.py	/^import os$/;"	i
+os	test/__init__.py	/^import os$/;"	i
+os	test/test_jamdict.py	/^import os$/;"	i
+os	test/test_jmdict_sqlite.py	/^import os$/;"	i
+os	test/test_kanjidic2_sqlite.py	/^import os$/;"	i
+otenki	jamdict_demo.py	/^otenki = jam.lookup('id#1002470').entries[0]$/;"	v
+package_data	setup.py	/^    package_data={'jamdict': ['data\/*.sql', 'data\/*.json']},$/;"	v
+packages	setup.py	/^    packages=['jamdict'],$/;"	v
+parse_bibinfo	jamdict/jmdict.py	/^    def parse_bibinfo(self, bib_tag, entry_info):$/;"	m	class:JMDictXMLParser
+parse_char	jamdict/kanjidic2.py	/^    def parse_char(self, e):$/;"	m	class:Kanjidic2XMLParser
+parse_codepoint	jamdict/kanjidic2.py	/^    def parse_codepoint(self, e, char):$/;"	m	class:Kanjidic2XMLParser
+parse_dic_refs	jamdict/kanjidic2.py	/^    def parse_dic_refs(self, e, char):$/;"	m	class:Kanjidic2XMLParser
+parse_ent_seq	jamdict/jmdict.py	/^    def parse_ent_seq(self, seq_tag, entry):$/;"	m	class:JMDictXMLParser
+parse_entry_tag	jamdict/jmdict.py	/^    def parse_entry_tag(self, etag):$/;"	m	class:JMDictXMLParser
+parse_file	jamdict/jmdict.py	/^    def parse_file(self, jmdict_file_path):$/;"	m	class:JMDictXMLParser
+parse_file	jamdict/kanjidic2.py	/^    def parse_file(self, kd2_file_path):$/;"	m	class:Kanjidic2XMLParser
+parse_header	jamdict/kanjidic2.py	/^    def parse_header(self, e):$/;"	m	class:Kanjidic2XMLParser
+parse_info	jamdict/jmdict.py	/^    def parse_info(self, info_tag, entry):$/;"	m	class:JMDictXMLParser
+parse_k_ele	jamdict/jmdict.py	/^    def parse_k_ele(self, k_ele, entry):$/;"	m	class:JMDictXMLParser
+parse_link	jamdict/jmdict.py	/^    def parse_link(self, link_tag, entry_info):$/;"	m	class:JMDictXMLParser
+parse_lsource	jamdict/jmdict.py	/^    def parse_lsource(self, lsource_tag, sense):$/;"	m	class:JMDictXMLParser
+parse_misc	jamdict/kanjidic2.py	/^    def parse_misc(self, e, char):$/;"	m	class:Kanjidic2XMLParser
+parse_query_code	jamdict/kanjidic2.py	/^    def parse_query_code(self, e, char):$/;"	m	class:Kanjidic2XMLParser
+parse_r_ele	jamdict/jmdict.py	/^    def parse_r_ele(self, r_ele, entry):$/;"	m	class:JMDictXMLParser
+parse_radical	jamdict/kanjidic2.py	/^    def parse_radical(self, e, char):$/;"	m	class:Kanjidic2XMLParser
+parse_reading_meaning	jamdict/kanjidic2.py	/^    def parse_reading_meaning(self, e, char):$/;"	m	class:Kanjidic2XMLParser
+parse_sense	jamdict/jmdict.py	/^    def parse_sense(self, sense_tag, entry):$/;"	m	class:JMDictXMLParser
+parse_sensegloss	jamdict/jmdict.py	/^    def parse_sensegloss(self, gloss_tag, sense):$/;"	m	class:JMDictXMLParser
+ping_pong	app.py	/^def ping_pong():$/;"	f
+pkg_info	setup.py	/^pkg_info = {}$/;"	v
+platforms	setup.py	/^    platforms='any',$/;"	v
+pos	jamdict/data/setup_jmdict.sql	/^CREATE TABLE pos ($/;"	t
+pos.pos_sid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX pos_sid ON pos(sid);$/;"	i
+pos.pos_text	jamdict/data/setup_jmdict.sql	/^CREATE INDEX pos_text ON pos(text);$/;"	i
+pos.sid	jamdict/data/setup_jmdict.sql	/^       sid INTEGER$/;"	F
+pos.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+project_urls	setup.py	/^    project_urls={$/;"	v
+puchikarui	kotoba.py	/^from puchikarui import puchikarui$/;"	i
+query_code	jamdict/data/setup_kanjidic2.sql	/^CREATE TABLE query_code ($/;"	t
+query_code.cid	jamdict/data/setup_kanjidic2.sql	/^       cid INTEGER$/;"	F
+query_code.qc_type	jamdict/data/setup_kanjidic2.sql	/^       ,qc_type TEXT$/;"	F
+query_code.query_code_value	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX query_code_value ON query_code(value);$/;"	i
+query_code.skip_misclass	jamdict/data/setup_kanjidic2.sql	/^       ,skip_misclass TEXT$/;"	F
+query_code.value	jamdict/data/setup_kanjidic2.sql	/^       ,value TEXT$/;"	F
+rad_name	jamdict/data/setup_kanjidic2.sql	/^CREATE TABLE rad_name ($/;"	t
+rad_name.cid	jamdict/data/setup_kanjidic2.sql	/^       cid INTEGER$/;"	F
+rad_name.rad_name_value	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX rad_name_value ON rad_name(value);$/;"	i
+rad_name.value	jamdict/data/setup_kanjidic2.sql	/^       ,value TEXT$/;"	F
+radical	jamdict/data/setup_kanjidic2.sql	/^CREATE TABLE radical ($/;"	t
+radical.cid	jamdict/data/setup_kanjidic2.sql	/^       cid INTEGER$/;"	F
+radical.rad_type	jamdict/data/setup_kanjidic2.sql	/^       ,rad_type TEXT$/;"	F
+radical.radical_value	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX radical_value ON radical(value);$/;"	i
+radical.value	jamdict/data/setup_kanjidic2.sql	/^       ,value TEXT$/;"	F
+ramdb	test/test_jmdict_sqlite.py	/^    ramdb = JMDictSQLite(":memory:", auto_expand_path=False)$/;"	v	class:TestJamdictSQLite
+ramdb	test/test_kanjidic2_sqlite.py	/^    ramdb = KanjiDic2SQLite(":memory:", auto_expand_path=False)$/;"	v	class:TestJamdictSQLite
+random	kotoba.py	/^import random$/;"	i
+read	setup.py	/^def read(*filenames, **kwargs):$/;"	f
+read_config	jamdict/config.py	/^def read_config():$/;"	f
+read_file	jamdict/config.py	/^from chirptext.chio import read_file, write_file$/;"	i
+reading	jamdict/data/setup_kanjidic2.sql	/^CREATE TABLE reading ($/;"	t
+reading.gid	jamdict/data/setup_kanjidic2.sql	/^       gid INTEGER$/;"	F
+reading.on_type	jamdict/data/setup_kanjidic2.sql	/^       ,on_type TEXT$/;"	F
+reading.r_status	jamdict/data/setup_kanjidic2.sql	/^       ,r_status TEXT$/;"	F
+reading.r_type	jamdict/data/setup_kanjidic2.sql	/^       ,r_type TEXT$/;"	F
+reading.reading_r_type	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX reading_r_type ON reading(r_type);$/;"	i
+reading.reading_value	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX reading_value ON reading(value);$/;"	i
+reading.value	jamdict/data/setup_kanjidic2.sql	/^       ,value TEXT$/;"	F
+readme_file	setup.py	/^readme_file = 'README.md'$/;"	v
+request	app.py	/^from flask import Flask, jsonify, request$/;"	i
+request	jamdol-flask.py	/^from flask import request$/;"	i
+requirements	setup.py	/^    requirements = infile.read().splitlines()$/;"	v
+result	jamdict_demo.py	/^result = jam.lookup('おかえし')$/;"	v
+result	jamdict_demo.py	/^result = jam.lookup('御土産')$/;"	v
+rm_group	jamdict/data/setup_kanjidic2.sql	/^CREATE TABLE rm_group ($/;"	t
+rm_group.ID	jamdict/data/setup_kanjidic2.sql	/^       ID INTEGER PRIMARY KEY AUTOINCREMENT$/;"	F
+rm_group.cid	jamdict/data/setup_kanjidic2.sql	/^       ,cid INTEGER$/;"	F
+rm_group.rm_group_cid	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX rm_group_cid ON rm_group(cid);$/;"	i
+search	jamdict/jmdict_sqlite.py	/^    def search(self, query, ctx=None, **kwargs):$/;"	m	class:JMDictSQLite
+search	jamdol-flask.py	/^def search(query, strict=None):$/;"	f
+setUpClass	test/test_jamdict.py	/^    def setUpClass(cls):$/;"	m	class:TestJamdictXML
+setUpClass	test/test_jmdict_sqlite.py	/^    def setUpClass(cls):$/;"	m	class:TestJamdictSQLite
+setUpClass	test/test_kanjidic2_sqlite.py	/^    def setUpClass(cls):$/;"	m	class:TestJamdictSQLite
+set_info	jamdict/jmdict.py	/^    def set_info(self, info):$/;"	m	class:JMDEntry
+set_tag	jamdict/jmdict.py	/^    def set_tag(self, tag):$/;"	m	class:BibInfo
+set_text	jamdict/jmdict.py	/^    def set_text(self, text):$/;"	m	class:BibInfo
+set_text	jamdict/jmdict.py	/^    def set_text(self, text):$/;"	m	class:KanaForm
+set_text	jamdict/jmdict.py	/^    def set_text(self, text):$/;"	m	class:KanjiForm
+setup	setup.py	/^from setuptools import setup$/;"	i
+setup_logging	jamdict/tools.py	/^from chirptext.cli import CLIApp, setup_logging$/;"	i
+setup_logging	jamdol-flask.py	/^from chirptext.cli import setup_logging$/;"	i
+setup_logging	test/__init__.py	/^from chirptext.cli import setup_logging$/;"	i
+show_info	jamdict/tools.py	/^def show_info(cli, args):$/;"	f
+stagk	jamdict/data/setup_jmdict.sql	/^CREATE TABLE stagk ($/;"	t
+stagk.sid	jamdict/data/setup_jmdict.sql	/^       sid INTEGER$/;"	F
+stagk.stagk_sid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX stagk_sid ON stagk(sid);$/;"	i
+stagk.stagk_text	jamdict/data/setup_jmdict.sql	/^CREATE INDEX stagk_text ON stagk(text);$/;"	i
+stagk.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+stagr	jamdict/data/setup_jmdict.sql	/^CREATE TABLE stagr ($/;"	t
+stagr.sid	jamdict/data/setup_jmdict.sql	/^       sid INTEGER$/;"	F
+stagr.stagr_sid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX stagr_sid ON stagr(sid);$/;"	i
+stagr.stagr_text	jamdict/data/setup_jmdict.sql	/^CREATE INDEX stagr_text ON stagr(text);$/;"	i
+stagr.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+start_game	kotoba.py	/^    def start_game(self):$/;"	m	class:Kotoba
+start_session	kotoba.py	/^    def start_session(self):$/;"	m	class:Kotoba
+stroke_miscount	jamdict/data/setup_kanjidic2.sql	/^CREATE TABLE stroke_miscount ($/;"	t
+stroke_miscount.cid	jamdict/data/setup_kanjidic2.sql	/^       cid INTEGER$/;"	F
+stroke_miscount.value	jamdict/data/setup_kanjidic2.sql	/^       ,value INTEGER$/;"	F
+sys	test/test_jmdict_sqlite.py	/^import sys$/;"	i
+test	app.py	/^def test():$/;"	f
+test_basic_models	test/test_jamdict.py	/^    def test_basic_models(self):$/;"	m	class:TestModels
+test_config	test/test_jamdict.py	/^    def test_config(self):$/;"	m	class:TestConfig
+test_import_function	test/test_jmdict_sqlite.py	/^    def test_import_function(self):$/;"	m	class:TestJamdictSQLite
+test_jamdict_sqlite_all	test/test_jamdict.py	/^    def test_jamdict_sqlite_all(self):$/;"	m	class:TestJamdictSQLite
+test_jamdict_xml	test/test_jamdict.py	/^    def test_jamdict_xml(self):$/;"	m	class:TestJamdictXML
+test_jmdict_fields	test/test_jamdict.py	/^    def test_jmdict_fields(self):$/;"	m	class:TestJamdictXML
+test_jmdict_json	test/test_jamdict.py	/^    def test_jmdict_json(self):$/;"	m	class:TestJamdictXML
+test_jmdict_xml	test/test_jamdict.py	/^    def test_jmdict_xml(self):$/;"	m	class:TestJamdictXML
+test_kanjidic2_json	test/test_jamdict.py	/^    def test_kanjidic2_json(self):$/;"	m	class:TestJamdictXML
+test_kanjidic2_xml	test/test_jamdict.py	/^    def test_kanjidic2_xml(self):$/;"	m	class:TestJamdictXML
+test_lookup_result	test/test_jamdict.py	/^    def test_lookup_result(self):$/;"	m	class:TestModels
+test_search	test/test_jmdict_sqlite.py	/^    def test_search(self):$/;"	m	class:TestJamdictSQLite
+test_suite	setup.py	/^    test_suite='test',$/;"	v
+test_xml2ramdb	test/test_jmdict_sqlite.py	/^    def test_xml2ramdb(self):$/;"	m	class:TestJamdictSQLite
+test_xml2sqlite	test/test_jmdict_sqlite.py	/^    def test_xml2sqlite(self):$/;"	m	class:TestJamdictSQLite
+test_xml2sqlite	test/test_kanjidic2_sqlite.py	/^    def test_xml2sqlite(self):$/;"	m	class:TestJamdictSQLite
+tests_require	setup.py	/^    tests_require=requirements,$/;"	v
+text	jamdict/jmdict.py	/^    def text(self, compact=True):$/;"	m	class:Sense
+text	jamdict/jmdict.py	/^    def text(self, compact=True, separator=' ', no_id=False):$/;"	m	class:JMDEntry
+text	jamdict/util.py	/^    def text(self, compact=True, entry_sep='。', separator=' | ', no_id=False, with_chars=True):$/;"	m	class:LookupResult
+threading	jamdict/util.py	/^import threading$/;"	i
+to_json	jamdict/jmdict.py	/^    def to_json(self):$/;"	m	class:Audit
+to_json	jamdict/jmdict.py	/^    def to_json(self):$/;"	m	class:BibInfo
+to_json	jamdict/jmdict.py	/^    def to_json(self):$/;"	m	class:EntryInfo
+to_json	jamdict/jmdict.py	/^    def to_json(self):$/;"	m	class:JMDEntry
+to_json	jamdict/jmdict.py	/^    def to_json(self):$/;"	m	class:KanaForm
+to_json	jamdict/jmdict.py	/^    def to_json(self):$/;"	m	class:KanjiForm
+to_json	jamdict/jmdict.py	/^    def to_json(self):$/;"	m	class:LSource
+to_json	jamdict/jmdict.py	/^    def to_json(self):$/;"	m	class:Link
+to_json	jamdict/jmdict.py	/^    def to_json(self):$/;"	m	class:Sense
+to_json	jamdict/jmdict.py	/^    def to_json(self):$/;"	m	class:SenseGloss
+to_json	jamdict/kanjidic2.py	/^    def to_json(self):$/;"	f
+to_json	jamdict/kanjidic2.py	/^    def to_json(self):$/;"	m	class:Character
+to_json	jamdict/kanjidic2.py	/^    def to_json(self):$/;"	m	class:CodePoint
+to_json	jamdict/kanjidic2.py	/^    def to_json(self):$/;"	m	class:Meaning
+to_json	jamdict/kanjidic2.py	/^    def to_json(self):$/;"	m	class:RMGroup
+to_json	jamdict/kanjidic2.py	/^    def to_json(self):$/;"	m	class:Radical
+to_json	jamdict/kanjidic2.py	/^    def to_json(self):$/;"	m	class:Reading
+to_json	jamdict/kanjidic2.py	/^    def to_json(self):$/;"	m	class:Variant
+to_json	jamdict/util.py	/^    def to_json(self):$/;"	m	class:LookupResult
+tools	jamdict/__main__.py	/^from . import tools$/;"	i
+unittest	test/test_jamdict.py	/^import unittest$/;"	i
+unittest	test/test_jmdict_sqlite.py	/^import unittest$/;"	i
+unittest	test/test_kanjidic2_sqlite.py	/^import unittest$/;"	i
+update_meta	jamdict/jmdict_sqlite.py	/^    def update_meta(self, version, url, ctx=None):$/;"	m	class:JMDictSQLite
+update_meta	jamdict/kanjidic2_sqlite.py	/^    def update_meta(self, file_version, database_version, date_of_creation, ctx=None):$/;"	m	class:KanjiDic2SQLite
+url	setup.py	/^    url=pkg_info['__url__'],$/;"	v
+variant	jamdict/data/setup_kanjidic2.sql	/^CREATE TABLE variant ($/;"	t
+variant.cid	jamdict/data/setup_kanjidic2.sql	/^       cid INTEGER$/;"	F
+variant.value	jamdict/data/setup_kanjidic2.sql	/^       ,value TEXT$/;"	F
+variant.var_type	jamdict/data/setup_kanjidic2.sql	/^       ,var_type TEXT$/;"	F
+variant.variant_value	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX variant_value ON variant(value);$/;"	i
+version	jamdol-flask.py	/^def version():$/;"	f
+version	setup.py	/^    version=pkg_info['__version__'],$/;"	v
+version_info	jamdict/__init__.py	/^from . import __version__ as version_info$/;"	i
+version_info	jamdict/tools.py	/^from jamdict import version_info$/;"	i
+wraps	jamdol-flask.py	/^from functools import wraps$/;"	i
+write_file	jamdict/config.py	/^from chirptext.chio import read_file, write_file$/;"	i
+xdb	test/test_jmdict_sqlite.py	/^    xdb = JMDictXML.from_file(MINI_JMD)$/;"	v	class:TestJamdictSQLite
+xdb	test/test_kanjidic2_sqlite.py	/^    xdb = KanjiDic2XML.from_file(MINI_KD2)$/;"	v	class:TestJamdictSQLite
+xref	jamdict/data/setup_jmdict.sql	/^CREATE TABLE xref ($/;"	t
+xref.sid	jamdict/data/setup_jmdict.sql	/^       sid INTEGER$/;"	F
+xref.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
+xref.xref_sid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX xref_sid ON xref(sid);$/;"	i
+xref.xref_text	jamdict/data/setup_jmdict.sql	/^CREATE INDEX xref_text ON xref(text);$/;"	i
