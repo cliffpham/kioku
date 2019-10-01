@@ -30,12 +30,12 @@ def check_input(word, hidden):
         print(result_dict['senses'][0]['gloss'][i]['text'])
         str += result_dict['senses'][0]['gloss'][i]['text'] + '/'
 
-    english = str
+    english = str[:-1]
 
     new_dict = {}
-    new_dict['word'] = plain
-    new_dict['english'] = english
-    new_dict['kanji'] = kanji
+    new_dict['Word'] = plain
+    new_dict['English'] = english
+    new_dict['Kanji'] = kanji
 
     return new_dict
     
