@@ -3,9 +3,32 @@
 
 from jamdict import Jamdict
 import random
+import copy
 from puchikarui import puchikarui
 import logging
 puchikarui.getLogger().setLevel(logging.ERROR)
+
+def flatten(nested):
+    output = []
+    get = nested[:]
+    return recur(get, output)
+
+def recur(nested, output):
+    nested = queue_ify(nested)
+    while nested:
+        cur = nested.pop()
+        if isinstance(cur, (list, tuple)):
+            recur(cur, output)
+        else:
+            output.append(cur)
+
+    return output
+
+def queue_ify(input_stack):
+    output = []
+    while input_stack:
+        output.append(input_stack.pop())
+    return output
 
 class Kotoba():
     def __init__(self):
@@ -42,17 +65,33 @@ class Kotoba():
     def generate_moras(self):
         current_set = []
         all_set = []
-        while len(current_set) < 7:
+        hidden = []
+
+        all_set.append([self.moras[2]])
+        current_set.append(self.moras[2])
+        current_set.append(self.moras[17])
+        tsu = [self.moras[17]]
+        for mora in self.special_cases[self.moras[17]]:
+            tsu.append(mora)
+        all_set.append(tsu)
+
+        while len(current_set) < 9:
             cur = self.moras[random.randint(0, len(self.moras)-1)]
             if cur not in current_set:
                 current_set.append(cur)
-                all_set.append(cur)
+                hidden.append(cur)
                 if cur in self.special_cases:
+                    temp = [cur]
                     for char in self.special_cases[cur]:
-                        all_set.append(char)
-        str_display = ''.join(current_set)
+                        temp.append(char)
+                        hidden.append(char)
+                    all_set.append(temp)
+                else:
+                    all_set.append([cur])
+        dup = copy.deepcopy(all_set)
+        str_display = ''.join(flatten(dup))
 
-        return (str_display, current_set, all_set)
+        return (str_display, current_set, all_set, hidden)
 
     def display_result(self, word, entry, max_score):
         print("Correct!")

@@ -2,7 +2,15 @@
   <div>
     <b-container>
       <b-row class="text-center">
-        <b-col> <h1> {{moras}} </h1></b-col>
+        <b-col></b-col>
+        <b-col> 
+          <div class="game-board">
+          <div class="cell" v-for="mora in moras" v-if="mora.length === 3"  v-on:click="clicked_i(mora, i, form)">{{mora[i]}}</div>
+          <div class="cell" v-else-if="mora.length === 2" v-on:click="clicked_j(mora, j, form)">{{mora[j]}}</div>
+          <div class="cell" v-else v-on:click="form.word += mora[0]">{{mora[0]}}</div>
+          </div>
+        </b-col>
+        <b-col></b-col>
       </b-row>
       <b-row class="text-center">
         <b-col> <h5>Score: {{max_score}} </h5></b-col>
@@ -36,7 +44,7 @@
             </b-form-group>
             <b-button type="submit" variant="primary">Enter</b-button>
             <b-button variant="danger">New </b-button>
-            <b-button variant="warning"> Reset </b-button>
+            <b-button variant="warning" v-on:click="form.word = ''"> Reset </b-button>
           </b-form>
           </b-col>
         <b-col>
@@ -64,6 +72,9 @@ export default {
       },
       show: true,
       moras: '',
+      i: 0,
+      j: 0,
+      numClicks: 0,
       dictionary_output: '',
       used: [],
       lives: 3,
@@ -73,6 +84,44 @@ export default {
     };
   },
   methods: {
+    clicked_i(mora, i, form) {
+      this.numClicks += 1; 
+        if (this.numClicks == 1){
+          var self = this;
+          setTimeout(function(){
+            switch(self.numClicks){
+                case 1:
+                  form.word += mora[i];
+                  break;
+                default:
+                  if (self.i < 2)
+                    self.i += 1;
+                  else
+                    self.i = 0;
+            }
+            self.numClicks = 0;
+          }, 200);
+        }
+    }, 
+    clicked_j(mora, j, form) {
+      this.numClicks += 1; 
+        if (this.numClicks == 1){
+          var self = this;
+          setTimeout(function(){
+            switch(self.numClicks){
+                case 1:
+                  form.word += mora[j];
+                  break;
+                default:
+                  if (self.j < 1)
+                    self.j += 1;
+                  else
+                    self.j = 0;
+            }
+            self.numClicks = 0;
+          }, 200);
+        }
+    },
     getMoras() {
       const path = 'http://localhost:5000/test';
       axios.get(path)
@@ -130,6 +179,27 @@ export default {
 <style scoped>
 li {
   list-style-type: none;
+}
+
+.game-board {
+    display: grid;
+    grid-template-rows: 50px 50px 50px;
+    grid-template-columns: 50px 50px 50px;
+}
+
+.cell {
+  background: grey;
+  margin: 2px;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
 }
 
 </style>

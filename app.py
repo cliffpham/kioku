@@ -50,8 +50,8 @@ def test():
     moras = get_moras[0]
     hidden = get_moras[2]
     ht = {}
-    ht['moras'] = moras 
-    ht['hidden'] = ''.join(hidden)
+    ht['moras'] = hidden
+    ht['hidden'] = ''.join(moras)
 
     return jsonify(ht)
 
