@@ -2,15 +2,22 @@
   <div>
     <b-container>
       <b-row class="text-center">
-        <b-col> <h3>Score: {{max_score}} </h3></b-col>
         <b-col> <h1> {{moras}} </h1></b-col>
-        <b-col> <h3>Lives: {{ lives }} </h3></b-col>
       </b-row>
       <b-row class="text-center">
-        <b-col><h2>{{msg}}</h2></b-col>
+        <b-col> <h5>Score: {{max_score}} </h5></b-col>
+        <b-col cols="6"></b-col>
+        <b-col> <h5>Lives: {{ lives }} </h5></b-col>
+      </b-row>
+        <b-col> </b-col>
       </b-row>
       <b-row class="text-center">
-        <b-col><h6>{{dictionary_output}}</h6></b-col>
+        <b-col><h2 v-if="this.msg">{{msg}}</h2></b-col>
+      </b-row>
+      <b-row class="text-center">
+        <b-col><div v-if="dictionary_output != 'Not a word'" v-for="(key,value) in dictionary_output"
+                    >{{value}}: {{key}}</div>
+        </b-col>
       </b-row>
       <b-row>
         <b-col>
@@ -31,7 +38,7 @@
           </b-form>
           </b-col>
         <b-col>
-          <p> {{used}} </p>
+          <li v-for="n in used"> {{n}} </li>
         </b-col>
       </b-row>
     </b-container>
@@ -80,22 +87,19 @@ export default {
           this.dictionary_output = res.data;
           const check = this.used;
           const check_word = this.form.word;
-          if (this.dictionary_output == "Not a word")
-          {
-            this.msg = 'This is not a word!';
+          if (this.dictionary_output == 'Not a word') {
+            this.msg = 'Incorrect!';
+            this.dictionary_output == '';
             this.lives -= 1;
-          }
-          if (check.includes(check_word))
-          {
-            this.msg = 'You have already tried using ' + check_word; 
+          } else if (check.includes(check_word)) {
+            this.msg = `You have already tried using ${check_word}`;
+            this.dictionary_output == '';
             this.lives -= 1;
-          }
-          else
-          {
-          this.msg = 'Correct!';
-          this.max_score += 1;
-          this.used.push(this.form.word);
-          this.resetForm();
+          } else {
+            this.msg = 'Correct!';
+            this.max_score += 1;
+            this.used.push(this.form.word);
+            this.resetForm();
           }
         });
     },
@@ -106,11 +110,17 @@ export default {
     },
     resetForm() {
       this.form.word = '';
-      this.msg = '';
-    }
+    },
   },
   created() {
     this.getMoras();
   },
 };
 </script>
+
+<style scoped>
+li {
+  list-style-type: none;
+}
+
+</style>

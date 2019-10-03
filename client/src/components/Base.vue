@@ -5,23 +5,21 @@
 </template>
 
 <script>
-import Start from './Start.vue'
-import Game from './Game.vue'
+import Start from './Start.vue';
+import Game from './Game.vue';
 
 export default {
   name: 'Base',
   components: {
-    'Start': Start,
-    'Game': Game,
-    
+    Start,
+    Game,
+
   },
-  data(){
+  data() {
     return {
-      component: 'Start'
-    }
-  }
-}
-  
+      component: 'Start',
+    };
+  },
+};
+
 </script>
-
-

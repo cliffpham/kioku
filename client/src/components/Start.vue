@@ -12,9 +12,9 @@
 export default {
   name: 'Start',
   methods: {
-    handleClick: function() {
-      this.$emit('startGame')
-    }
-  }
-}
+    handleClick() {
+      this.$emit('startGame');
+    },
+  },
+};
 </script>

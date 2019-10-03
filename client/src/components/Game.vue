@@ -2,9 +2,39 @@
   <div>
     <GlobalEvents @keydown.enter="onSubmit"></GlobalEvents>
     <b-container>
+
+      <modal name="game" :width="300" :height="300">
+        <b-container>
+          <b-row class="text-center" style="padding-top:50px;">
+            <b-col>
+              <h1>ゲームオーバー</h1>
+            </b-col>
+          </b-row>
+          <b-row class="text-center">
+            <b-col>
+              <h6>Game Over</h6>
+            </b-col>
+          </b-row>
+          <b-row class="text-center">
+            <b-col>
+             <h4> Your Score: {{max_score}} </h4>
+            </b-col>
+          </b-row>
+          <b-row class="text-center">
+            <b-col>
+              <b-button variant="primary" v-on:click="resetGame"> Play Again? </b-button>
+            </b-col>
+          </b-row>
+        </b-container>
+      </modal>
+
       <b-row class="text-center">
         <b-col>
-        <b-col><h2 v-if="this.msg">{{msg}}</h2></b-col>
+          <b-col>
+            <transition name="fade" mode="out-in">
+              <h2 v-if="this.msg" v-bind:key="msg">{{msg}}</h2>
+            </transition>
+          </b-col>
         </b-col>
       </b-row>
       <b-row id="test" class="text-center">
@@ -15,7 +45,8 @@
         <b-col> </b-col>
       </b-row>
       <b-row id="display" class="text-center">
-        <b-col><div v-if="dictionary_output != 'Not a word'" v-for="(key,value) in dictionary_output"
+        <b-col>
+          <div v-if="dictionary_output != 'Not a word'" v-for="(key,value) in dictionary_output"
                     >{{value}}: {{key}}</div>
         </b-col>
       </b-row>
@@ -42,21 +73,21 @@
             <div class="buttons">
               <div class="buttonCell" v-on:click="onSubmit">入力</div>
               <div class="buttonCell" v-on:click="deleteChar"> 消 </div>
-              <div class="buttonCell"> 新 </div>
-              <div class="buttonCell" v-on:click="form.word = ''"> R </div>
-              <div class="buttonCell"> 変更</div>
+              <div class="buttonCell" v-on:click="newMoras"> 新 </div>
             </div>
           </b-form>
           </b-col>
         <b-col>
           <span>Words you've found: </span>
-          <li v-for="n in used"> {{n}} </li>
+          <transition-group name="slide-fade">
+            <li v-for="n in used" v-bind:key="n"> {{n}} </li>
+          </transition-group>
         </b-col>
       </b-row>
     </b-container>
-    <b-card class="mt-3" header="Form Data Result">
+    <!--<b-card class="mt-3" header="Form Data Result">
       <pre class="m-0">{{ form }}</pre>
-    </b-card>
+    </b-card>-->
   </div>
 </template>
 
@@ -88,6 +119,12 @@ export default {
     test(evt) {
       console.log(evt.key);
     },
+    showModal() {
+      this.$modal.show('game');
+    },
+    hideModal() {
+      this.$modal.hide('game');
+    },
     deleteChar() {
       let str = this.form.word;
       console.log(str);
@@ -112,6 +149,9 @@ export default {
           self.numClicks = 0;
         }, 200);
       }
+    },
+    newMoras() {
+      this.getMoras();
     },
     clicked_j(mora, j, form) {
       this.numClicks += 1;
@@ -160,8 +200,10 @@ export default {
             this.msg = '正解';
             this.max_score += 1;
             this.used.push(this.form.word);
-            this.resetForm();
           }
+          if (this.lives <= 0)
+            this.showModal();
+          this.resetForm();
         });
     },
     onSubmit(evt) {
@@ -172,10 +214,18 @@ export default {
     resetForm() {
       this.form.word = '';
     },
+    resetGame() {
+      this.lives = 3;
+      this.max_score = 0;
+      this.dictionary_output = '';
+      this.used = [];
+      this.msg = '言葉を探そう!';
+      this.hideModal();
+      this.getMoras();
+    },
   },
   created() {
     this.getMoras();
-    document.onkeydown.enter = this.onSubmit();
   },
 };
 </script>
@@ -190,7 +240,7 @@ li {
 }
 
 #test {
-  border-bottom: solid 2px grey;
+  border-bottom: solid 2px lightgrey;
   margin-bottom: 15px;
 }
 
@@ -199,7 +249,7 @@ li {
 }
 
 .selector {
-  border-top: solid 2px grey;
+  border-top: solid 2px lightgrey;
   padding-top: 15px;
 }
 
@@ -215,6 +265,12 @@ li {
   align-items: center;
   margin: 2px;
   justify-content: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -user-select: none;
 }
 
 .game-board {
@@ -232,11 +288,41 @@ li {
   align-items: center;
   justify-content: center;
   -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -user-select: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: azure;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid gray;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s ease;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
 }
 
 </style>
