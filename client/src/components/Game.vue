@@ -231,9 +231,14 @@ export default {
 </script>
 
 <style scoped>
+* {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
 input {
   width: 224px;
   border: 0px solid;
+  text-align: center;
+  padding-top: 5px;
 }
 li {
   list-style-type: none;
@@ -257,6 +262,7 @@ li {
   display: grid;
   grid-template-rows: 30px;
   grid-template-columns: 41px 41px 41px 41px 41px;
+  padding-left: 50px;
 }
 
 .buttonCell {
