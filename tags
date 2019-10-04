@@ -377,6 +377,7 @@ config	jamdict/tools.py	/^from jamdict import config$/;"	i
 config	jamdict/util.py	/^from . import config$/;"	i
 config	test/test_jamdict.py	/^from jamdict import config$/;"	i
 confirm	jamdict/tools.py	/^from chirptext import confirm, TextReport, Timer$/;"	i
+copy	kotoba.py	/^import copy$/;"	i
 data_dir	jamdict/config.py	/^def data_dir():$/;"	f
 db	test/test_jmdict_sqlite.py	/^    db = JMDictSQLite(TEST_DB)$/;"	v	class:TestJamdictSQLite
 db	test/test_kanjidic2_sqlite.py	/^    db = KanjiDic2SQLite(TEST_DB)$/;"	v	class:TestJamdictSQLite
@@ -409,6 +410,7 @@ field.text	jamdict/data/setup_jmdict.sql	/^       ,text TEXT$/;"	F
 file_status	jamdict/tools.py	/^def file_status(file_path):$/;"	f
 find_kotoba	kotoba.py	/^    def find_kotoba(self, word, hidden):$/;"	m	class:Kotoba
 flask	jamdol-flask.py	/^import flask$/;"	i
+flatten	kotoba.py	/^def flatten(nested):$/;"	f
 from_file	jamdict/util.py	/^    def from_file(filename):$/;"	m	class:JMDictXML
 from_file	jamdict/util.py	/^    def from_file(filename):$/;"	m	class:KanjiDic2XML
 function	test/test_jmdict_sqlite.py	/^        print("Testing JMDict import function")$/;"	i
@@ -557,6 +559,7 @@ query_code.qc_type	jamdict/data/setup_kanjidic2.sql	/^       ,qc_type TEXT$/;"	F
 query_code.query_code_value	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX query_code_value ON query_code(value);$/;"	i
 query_code.skip_misclass	jamdict/data/setup_kanjidic2.sql	/^       ,skip_misclass TEXT$/;"	F
 query_code.value	jamdict/data/setup_kanjidic2.sql	/^       ,value TEXT$/;"	F
+queue_ify	kotoba.py	/^def queue_ify(input_stack):$/;"	f
 rad_name	jamdict/data/setup_kanjidic2.sql	/^CREATE TABLE rad_name ($/;"	t
 rad_name.cid	jamdict/data/setup_kanjidic2.sql	/^       cid INTEGER$/;"	F
 rad_name.rad_name_value	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX rad_name_value ON rad_name(value);$/;"	i
@@ -581,6 +584,7 @@ reading.reading_r_type	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX reading_r
 reading.reading_value	jamdict/data/setup_kanjidic2.sql	/^CREATE INDEX reading_value ON reading(value);$/;"	i
 reading.value	jamdict/data/setup_kanjidic2.sql	/^       ,value TEXT$/;"	F
 readme_file	setup.py	/^readme_file = 'README.md'$/;"	v
+recur	kotoba.py	/^def recur(nested, output):$/;"	f
 request	app.py	/^from flask import Flask, jsonify, request$/;"	i
 request	jamdol-flask.py	/^from flask import request$/;"	i
 requirements	setup.py	/^    requirements = infile.read().splitlines()$/;"	v
@@ -605,6 +609,7 @@ setup_logging	jamdict/tools.py	/^from chirptext.cli import CLIApp, setup_logging
 setup_logging	jamdol-flask.py	/^from chirptext.cli import setup_logging$/;"	i
 setup_logging	test/__init__.py	/^from chirptext.cli import setup_logging$/;"	i
 show_info	jamdict/tools.py	/^def show_info(cli, args):$/;"	f
+shuffle	kotoba.py	/^def shuffle(arr):$/;"	f
 stagk	jamdict/data/setup_jmdict.sql	/^CREATE TABLE stagk ($/;"	t
 stagk.sid	jamdict/data/setup_jmdict.sql	/^       sid INTEGER$/;"	F
 stagk.stagk_sid	jamdict/data/setup_jmdict.sql	/^CREATE INDEX stagk_sid ON stagk(sid);$/;"	i

@@ -19,6 +19,7 @@ def check_input(word, hidden):
     result = jsonpickle.encode(result)
     result_dict = {}
     result_dict = json.loads(result)[0]
+    print(result_dict);
     for k,v in result_dict.items():
         print(k)
     kanji = None
@@ -33,7 +34,7 @@ def check_input(word, hidden):
     english = str[:-1]
 
     new_dict = {}
-    new_dict['Word'] = plain
+    new_dict['Word'] = word
     new_dict['English'] = english
     new_dict['Kanji'] = kanji
 

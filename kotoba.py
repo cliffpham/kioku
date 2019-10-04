@@ -30,6 +30,13 @@ def queue_ify(input_stack):
         output.append(input_stack.pop())
     return output
 
+def shuffle(arr):
+    for i in range(len(arr)-1):
+        a = random.randint(0, len(arr)-1)
+        temp = arr[i]
+        arr[i] = arr[a]
+        arr[a] = temp
+
 class Kotoba():
     def __init__(self):
         self.jmd = Jamdict() 
@@ -90,6 +97,7 @@ class Kotoba():
                     all_set.append([cur])
         dup = copy.deepcopy(all_set)
         str_display = ''.join(flatten(dup))
+        shuffle(all_set)
 
         return (str_display, current_set, all_set, hidden)
 

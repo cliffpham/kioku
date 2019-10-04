@@ -3,7 +3,7 @@
     <GlobalEvents @keydown.enter="onSubmit"></GlobalEvents>
     <b-container>
 
-      <modal name="game" :width="300" :height="300">
+      <modal name="game" :width="400" :height="300">
         <b-container>
           <b-row class="text-center" style="padding-top:50px;">
             <b-col>
@@ -32,7 +32,7 @@
         <b-col>
           <b-col>
             <transition name="fade" mode="out-in">
-              <h2 v-if="this.msg" v-bind:key="msg">{{msg}}</h2>
+              <h2 v-if="this.msg" v-bind:key="msg" style="padding-top: 15px;">{{msg}}</h2>
             </transition>
           </b-col>
         </b-col>
@@ -45,13 +45,13 @@
         <b-col> </b-col>
       </b-row>
       <b-row id="display" class="text-center">
-        <b-col>
+          <b-col>
           <div v-if="dictionary_output != 'Not a word'" v-for="(key,value) in dictionary_output"
                     >{{value}}: {{key}}</div>
-        </b-col>
+          </b-col>
       </b-row>
       <b-row class="selector">
-        <b-col>
+        <b-col offset-md="2">
           <div class="game-board">
           <div class="cell" v-for="mora in moras" v-if="mora.length === 3"  v-on:click="clicked_i(mora, i, form)">{{mora[i]}}</div>
           <div class="cell" v-else-if="mora.length === 2" v-on:click="clicked_j(mora, j, form)">{{mora[j]}}</div>
@@ -77,11 +77,13 @@
             </div>
           </b-form>
           </b-col>
-        <b-col>
-          <span>Words you've found: </span>
+        <b-col offset-md="1">
+          <div class="memoryBank">
+            <h6><strong>Memory Bank</strong></h6>
           <transition-group name="slide-fade">
-            <li v-for="n in used" v-bind:key="n"> {{n}} </li>
+            <li v-for="n in displayUsed" v-bind:key="n"> {{n}} </li>
           </transition-group>
+          </div>
         </b-col>
       </b-row>
     </b-container>
@@ -109,6 +111,7 @@ export default {
       numClicks: 0,
       dictionary_output: '',
       used: [],
+      displayUsed: [],
       lives: 3,
       msg: '言葉を探そう!',
       cur_score: 0,
@@ -194,12 +197,15 @@ export default {
             this.lives -= 1;
           } else if (check.includes(check_word)) {
             this.msg = `You have already tried using ${check_word}`;
-            this.dictionary_output == '';
+            this.dictionary_output = '';
             this.lives -= 1;
           } else {
             this.msg = '正解';
             this.max_score += 1;
             this.used.push(this.form.word);
+            this.displayUsed.push(this.form.word)
+            if (this.displayUsed.length >= 7)
+              this.displayUsed.shift();
           }
           if (this.lives <= 0)
             this.showModal();
@@ -219,6 +225,7 @@ export default {
       this.max_score = 0;
       this.dictionary_output = '';
       this.used = [];
+      this.displayUsed = [];
       this.msg = '言葉を探そう!';
       this.hideModal();
       this.getMoras();
@@ -240,6 +247,13 @@ input {
   text-align: center;
   padding-top: 5px;
 }
+
+h6 {
+  padding-top: 10px;
+  font-size: 1em;
+  color: grey;
+}
+
 li {
   list-style-type: none;
 }
@@ -299,6 +313,13 @@ li {
   -moz-user-select: none;
   -ms-user-select: none;
   -user-select: none;
+}
+
+.memoryBank {
+  width: 125px;
+  height: 224px;
+  border: 0.5px solid lightgrey;
+  text-align: center;
 }
 
 .modal {
