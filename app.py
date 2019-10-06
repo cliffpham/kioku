@@ -40,9 +40,6 @@ def check_input(word, hidden):
 
     return new_dict
     
-@app.route('/ping', methods=['GET'])
-def ping_pong():
-    return jsonify('no longer necessary')
 
 @app.route('/test', methods=['GET'])
 def test():
@@ -58,7 +55,6 @@ def test():
 
 @app.route('/check', methods=['GET'])
 def check():
-    #print ( request.args, request.args.get("word"))
     word_check = request.args.get("word")
     print(word_check)
     hidden_check = (request.args.get("hidden"))

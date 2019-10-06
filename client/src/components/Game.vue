@@ -42,19 +42,17 @@
         <b-col cols="6"></b-col>
         <b-col> <h5>Lives: {{ lives }} </h5></b-col>
       </b-row>
-        <b-col> </b-col>
-      </b-row>
       <b-row id="display" class="text-center">
           <b-col>
-          <div v-if="dictionary_output != 'Not a word'" v-for="(key,value) in dictionary_output"
+          <div v-if="dictionary_output != 'Not a word'" v-for="(key,value) in dictionary_output" v-bind:key="key"
                     >{{value}}: {{key}}</div>
           </b-col>
       </b-row>
       <b-row class="selector">
         <b-col offset-md="2">
           <div class="game-board">
-          <div class="cell" v-for="mora in moras" v-if="mora.length === 3"  v-on:click="clicked_i(mora, i, form)">{{mora[i]}}</div>
-          <div class="cell" v-else-if="mora.length === 2" v-on:click="clicked_j(mora, j, form)">{{mora[j]}}</div>
+          <div class="cell" v-for="mora in moras" v-if="mora.length === 3" v-on:click="clicked_i(mora, i)" v-bind:key="mora">{{mora[i]}}</div>
+          <div class="cell" v-else-if="mora.length === 2" v-on:click="clicked_j(mora, j)">{{mora[j]}}</div>
           <div class="cell" v-else v-on:click="form.word += mora[0]">{{mora[0]}}</div>
           </div>
           <b-form @submit="onSubmit" v-if="show">
@@ -68,7 +66,7 @@
                 v-model="form.word"
                 type="word"
                 placeholder="言葉を作ってみて"
-              ></input>
+              >
             </b-form-group>
             <div class="buttons">
               <div class="buttonCell" v-on:click="onSubmit">入力</div>
@@ -120,7 +118,7 @@ export default {
   },
   methods: {
     test(evt) {
-      console.log(evt.key);
+      return evt.key;
     },
     showModal() {
       this.$modal.show('game');
@@ -130,20 +128,19 @@ export default {
     },
     deleteChar() {
       let str = this.form.word;
-      console.log(str);
       const lastIndex = str.length - 1;
       str = str.substring(0, lastIndex);
 
       this.form.word = str;
     },
-    clicked_i(mora, i, form) {
+    clicked_i(mora, i) {
       this.numClicks += 1;
-      if (this.numClicks == 1) {
+      if (this.numClicks === 1) {
         const self = this;
         setTimeout(() => {
           switch (self.numClicks) {
             case 1:
-              form.word += mora[i];
+              this.form.word += mora[i];
               break;
             default:
               if (self.i < 2) self.i += 1;
@@ -156,14 +153,14 @@ export default {
     newMoras() {
       this.getMoras();
     },
-    clicked_j(mora, j, form) {
+    clicked_j(mora, j) {
       this.numClicks += 1;
-      if (this.numClicks == 1) {
+      if (this.numClicks === 1) {
         const self = this;
         setTimeout(() => {
           switch (self.numClicks) {
             case 1:
-              form.word += mora[j];
+              this.form.word += mora[j];
               break;
             default:
               if (self.j < 1) self.j += 1;
@@ -190,25 +187,27 @@ export default {
         .then((res) => {
           this.dictionary_output = res.data;
           const check = this.used;
-          const check_word = this.form.word;
-          if (this.dictionary_output == 'Not a word') {
+          const checkWord = this.form.word;
+          if (this.dictionary_output === 'Not a word') {
             this.msg = 'X';
-            this.dictionary_output == '';
+            this.dictionary_output = '';
             this.lives -= 1;
-          } else if (check.includes(check_word)) {
-            this.msg = `You have already tried using ${check_word}`;
+          } else if (check.includes(checkWord)) {
+            this.msg = `You have already tried using ${checkWord}`;
             this.dictionary_output = '';
             this.lives -= 1;
           } else {
             this.msg = '正解';
             this.max_score += 1;
             this.used.push(this.form.word);
-            this.displayUsed.push(this.form.word)
-            if (this.displayUsed.length >= 7)
+            this.displayUsed.push(this.form.word);
+            if (this.displayUsed.length >= 7) {
               this.displayUsed.shift();
+            }
           }
-          if (this.lives <= 0)
+          if (this.lives <= 0) {
             this.showModal();
+          }
           this.resetForm();
         });
     },
@@ -346,8 +345,7 @@ li {
 .slide-fade-leave-active {
   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
+.slide-fade-enter, .slide-fade-leave-to {
   transform: translateX(10px);
   opacity: 0;
 }

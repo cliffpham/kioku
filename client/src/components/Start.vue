@@ -43,7 +43,7 @@ body {
 }
 
 .landing {
-  margin-top: 20%;
+  margin-top: 10%;
   border: solid 2px grey;
   width: 500px;
   height: 500px;
